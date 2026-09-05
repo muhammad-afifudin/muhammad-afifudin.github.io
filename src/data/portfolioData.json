@@ -1,0 +1,249 @@
+{
+  "personalInfo": {
+    "name": "Muhammad Afifudin",
+    "title": "Web Application Developer, Backend Engineer, & Machine Learning Practitioner",
+    "subtitle": "Specializing in Laravel, FastAPI, Scikit-Learn, and Scalable Web Systems",
+    "bio": "IT graduate from Politeknik Negeri Jember (GPA 3.80) with hands-on experience in web application development, backend engineering, and machine learning implementation. Experienced in building high-performance systems with PHP, Laravel, MySQL, Python, and REST APIs. Proven track record building recommendation engines, computer vision monitoring platforms, and client-oriented digital solutions.",
+    "city": "Waru, Sidoarjo, Jawa Timur, Indonesia",
+    "email": "muhafif1412@gmail.com",
+    "phone": "+62 821 3262 4998",
+    "github": "https://github.com/muhammad-afifudin",
+    "instagram": "https://www.instagram.com/_afifdn/",
+    "linkedin": "https://www.linkedin.com/in/muhammad-afifudin-70b53724a/",
+    "resumeUrl": "https://drive.google.com/file/d/14qdfRG8ACY59FmOKZwG-Dzm33D2XRQAI/view?usp=sharing"
+  },
+  "featuredProjects": [
+    {
+      "id": "brilliant-edtech",
+      "number": "01",
+      "title": "Brilliant EdTech ML",
+      "category": "Machine Learning & Backend",
+      "badge": "FASTAPI • LARAVEL • RANDOM FOREST",
+      "description": "Machine learning-based English learning level recommendation system. Implements a Random Forest classification model trained and integrated via a high-performance FastAPI microservice, connected directly to a Laravel web portal for automated student level recommendations.",
+      "metrics": ["Accuracy: 94.6%", "Inference: <45ms", "Microservice API"],
+      "tags": ["Python", "FastAPI", "Random Forest", "Laravel", "Scikit-Learn", "MySQL"],
+      "liveUrl": "",
+      "githubUrl": "https://github.com/muhammad-afifudin",
+      "codeSnippet": "POST /api/v1/recommend-level\n{\n  \"student_id\": \"STD-2025-084\",\n  \"assessment_scores\": [88, 92, 79, 85],\n  \"learning_pace\": \"accelerated\"\n}\n// Response: { \"recommended_level\": \"Advanced-B2\", \"confidence\": 0.946 }"
+    },
+    {
+      "id": "vehicle-monitoring",
+      "number": "02",
+      "title": "Vehicle Monitoring Dashboard",
+      "category": "Computer Vision & IoT Web",
+      "badge": "FLASK • COMPUTER VISION • LARAVEL",
+      "description": "Smart parking area monitoring system based on Computer Vision for BUMDES Krian Cafe Dewi Pandawa. Processes real-time vehicle detection video feeds via a Flask microservice and delivers parking capacity analytics to a centralized Laravel dashboard.",
+      "metrics": ["30 FPS Detection", "Real-Time Telemetry", "Centralized DB"],
+      "tags": ["Python", "Computer Vision", "Flask", "Laravel", "MySQL", "Scikit-Learn"],
+      "liveUrl": "",
+      "githubUrl": "https://github.com/muhammad-afifudin",
+      "codeSnippet": "STREAM /parking/camera-01 [ACTIVE]\n[INFO] YOLOv8/CV Detection Engine: 30.2 FPS\n[INFO] Occupied: 24/30 slots | Free: 6 slots\n[SYNC] Sent telemetry payload to Laravel backend (HTTP 200 OK)"
+    },
+    {
+      "id": "finpocket",
+      "number": "03",
+      "title": "FinPocket",
+      "category": "Machine Learning • Bangkit Capstone",
+      "badge": "SCIKIT-LEARN • REST API • CLOUD",
+      "description": "Personal financial planning recommendation application developed as a Bangkit Academy Capstone project (Google, GoTo, Traveloka). Designed feature engineering datasets and trained ML models served via REST API for Mobile and Cloud team integration.",
+      "metrics": ["Bangkit Capstone", "REST API Service", "Cross-Platform Sync"],
+      "tags": ["Python", "Machine Learning", "Scikit-Learn", "REST API", "Google Cloud"],
+      "liveUrl": "",
+      "githubUrl": "https://github.com/muhammad-afifudin",
+      "codeSnippet": "POST /v1/predictions/financial-plan\n{\n  \"monthly_income\": 7500000,\n  \"fixed_expenses\": 3200000,\n  \"financial_goal\": \"emergency_fund\"\n}\n// Response: { \"savings_allocation\": 0.28, \"risk_tolerance\": \"moderate\" }"
+    }
+  ],
+  "experiences": [
+    {
+      "id": "exp-1",
+      "role": "Machine Learning Engineer",
+      "company": "Brilliant International Education Plus",
+      "location": "Kediri, East Java",
+      "period": "Aug 2025 - Jun 2026",
+      "type": "Full-time",
+      "tech": ["Python", "Scikit-learn", "Random Forest", "FastAPI", "Laravel", "PHP", "MySQL"],
+      "highlights": [
+        "Developed a machine learning-based system to recommend appropriate English learning levels based on student data.",
+        "Implemented a Random Forest classification model using structured training and testing datasets.",
+        "Integrated the trained model with FastAPI to deliver lightning-fast prediction microservices to the Laravel web app."
+      ]
+    },
+    {
+      "id": "exp-2",
+      "role": "Web Developer",
+      "company": "Brilliant International Education Plus",
+      "location": "Kediri, East Java",
+      "period": "Jul 2025 - Nov 2025",
+      "type": "Contract",
+      "tech": ["Laravel", "PHP", "Livewire", "Blade", "MySQL", "JavaScript", "Alpine.js"],
+      "highlights": [
+        "Developed a web-based course marketing and student registration platform using Laravel MVC architecture.",
+        "Engineered reactive multi-step registration forms and administrative dashboards with Livewire & Alpine.js.",
+        "Secured authentication with Laravel Breeze and architected relational MySQL schemas for high transaction reliability."
+      ]
+    },
+    {
+      "id": "exp-3",
+      "role": "Web Developer (Computer Vision Integration)",
+      "company": "BUMDES Ponokawan Krian Cafe Dewi Pandawa",
+      "location": "Sidoarjo, East Java",
+      "period": "Feb 2025 - Jun 2025",
+      "type": "Project",
+      "tech": ["Python", "Computer Vision", "Flask", "Laravel", "PHP", "MySQL"],
+      "highlights": [
+        "Developed a web-based vehicle monitoring system for parking area automation.",
+        "Engineered a real-time monitoring dashboard to display vehicle detection counts and occupancy status.",
+        "Integrated Flask computer vision inference outputs into a centralized Laravel web management interface."
+      ]
+    },
+    {
+      "id": "exp-4",
+      "role": "Machine Learning Engineer (Capstone Project)",
+      "company": "Bangkit Academy led by Google, Tokopedia, Gojek, Traveloka",
+      "location": "Remote",
+      "period": "Sep 2024 - Jan 2025",
+      "type": "Cohort Certification",
+      "tech": ["Python", "Machine Learning", "Scikit-learn", "REST API", "Google Cloud"],
+      "highlights": [
+        "Graduated from the intensive Google-led Machine Learning curriculum with final distinction score 85.00/100.00.",
+        "Built FinPocket: dataset preprocessing, feature engineering, and predictive models for personalized financial guidance.",
+        "Collaborated with Cloud Computing and Mobile Development teams to deploy production-ready REST APIs."
+      ]
+    },
+    {
+      "id": "exp-5",
+      "role": "Bachelor of Applied Informatics Engineering",
+      "company": "Politeknik Negeri Jember",
+      "location": "Sidoarjo Campus",
+      "period": "Jun 2022 - Jun 2026",
+      "type": "Education • GPA 3.80 / 4.00",
+      "tech": ["Software Engineering", "Laravel", "Python", "Data Structures", "MySQL"],
+      "highlights": [
+        "2nd Place, National Applied Science Project Olympiad (NASPO), Universitas Gadjah Mada (UGM), 2026.",
+        "Finalist, 6th National Informatics Student Competition Hackathon.",
+        "Recipient of Funding, 2024 Intensive Student Creativity Program (PKM)."
+      ]
+    }
+  ],
+  "skills": [
+    { "name": "PHP", "icon": "/assets/img/skill/php.png", "category": "Backend" },
+    { "name": "Laravel", "icon": "/assets/img/skill/laravel.png", "category": "Backend" },
+    { "name": "Python", "icon": "/assets/img/skill/python.png", "category": "Backend" },
+    { "name": "FastAPI", "icon": "/assets/img/skill/python.png", "category": "Backend" },
+    { "name": "MySQL", "icon": "/assets/img/skill/mysql.png", "category": "Backend" },
+    { "name": "Scikit-Learn", "icon": "/assets/img/skill/python.png", "category": "Machine Learning" },
+    { "name": "Random Forest", "icon": "/assets/img/skill/python.png", "category": "Machine Learning" },
+    { "name": "Computer Vision", "icon": "/assets/img/skill/python.png", "category": "Machine Learning" },
+    { "name": "Livewire", "icon": "/assets/img/skill/laravel.png", "category": "Frontend" },
+    { "name": "JavaScript", "icon": "/assets/img/skill/html.png", "category": "Frontend" },
+    { "name": "Tailwind CSS", "icon": "/assets/img/skill/css.png", "category": "Frontend" },
+    { "name": "Git & GitHub", "icon": "/assets/img/skill/github.png", "category": "Tools" }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Applied Informatics Engineering",
+      "institution": "Politeknik Negeri Jember - Sidoarjo",
+      "period": "Jun 2022 - Jun 2026",
+      "description": "Graduated with GPA 3.80/4.00. 2nd Place NASPO UGM 2026, Finalist 6th National Informatics Student Competition Hackathon, Recipient of Funding PKM 2024."
+    },
+    {
+      "degree": "Software Engineering",
+      "institution": "SMK Senopati Sedati - Sidoarjo",
+      "period": "Jun 2019 - Jun 2022",
+      "description": "Score 89.00/100.00. 2nd Best Graduate, Software Engineering Program. Achieved Highly Competent rating in Laravel competency assessment."
+    }
+  ],
+  "experience": [
+    {
+      "role": "Machine Learning Engineer",
+      "company": "Brilliant International Education Plus",
+      "period": "Aug 2025 - Jun 2026",
+      "bullets": [
+        "Developed a machine learning-based system to recommend appropriate English learning levels based on student data.",
+        "Implemented Random Forest classification model with FastAPI and Laravel integration."
+      ]
+    },
+    {
+      "role": "Web Developer",
+      "company": "Brilliant International Education Plus",
+      "period": "Jul 2025 - Nov 2025",
+      "bullets": [
+        "Developed a web-based course marketing and student registration platform using Laravel and Livewire.",
+        "Engineered multi-step registration forms and administrative dashboards."
+      ]
+    },
+    {
+      "role": "Web Developer (Computer Vision)",
+      "company": "BUMDES Ponokawan Krian Cafe Dewi Pandawa",
+      "period": "Feb 2025 - Jun 2025",
+      "bullets": [
+        "Developed web-based vehicle monitoring system for parking area using Computer Vision and Flask.",
+        "Built administrative monitoring dashboard integrated with vehicle detection results."
+      ]
+    },
+    {
+      "role": "Machine Learning Engineer",
+      "company": "Bangkit Academy Capstone FinPocket",
+      "period": "Sep 2024 - Jan 2025",
+      "bullets": [
+        "Developed personal finance recommendation system using Machine Learning.",
+        "Performed dataset preprocessing and served predictive recommendations via REST API."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Brilliant EdTech ML",
+      "category": "Web",
+      "image": "/assets/img/portfolio/img-ppdb.png",
+      "description": "English learning level recommendation system built with Random Forest, FastAPI, and Laravel.",
+      "liveUrl": "",
+      "githubUrl": "https://github.com/muhammad-afifudin",
+      "tags": ["FastAPI", "Laravel", "Random Forest", "Python"]
+    },
+    {
+      "title": "Vehicle Monitoring Dashboard",
+      "category": "Web",
+      "image": "/assets/img/portfolio/img-tambak.png",
+      "description": "Computer Vision-based parking monitoring system with Flask and Laravel for BUMDES Krian Cafe Dewi Pandawa.",
+      "liveUrl": "",
+      "githubUrl": "https://github.com/muhammad-afifudin",
+      "tags": ["Computer Vision", "Flask", "Laravel", "MySQL"]
+    },
+    {
+      "title": "FinPocket Financial AI",
+      "category": "Web",
+      "image": "/assets/img/portfolio/img-keuangan-tambak.png",
+      "description": "Intelligent personal financial planning recommendation system (Bangkit Academy Capstone).",
+      "liveUrl": "",
+      "githubUrl": "https://github.com/muhammad-afifudin",
+      "tags": ["Python", "Machine Learning", "REST API"]
+    }
+  ],
+  "certificates": [
+    {
+      "title": "Web Developer Certification",
+      "issuer": "LSP P1 Politeknik Negeri Jember",
+      "date": "2025",
+      "description": "Achieved Competent rating in the Web Developer national competency certification by LSP P1 Politeknik Negeri Jember."
+    },
+    {
+      "title": "Bangkit Academy Machine Learning Cohort",
+      "issuer": "Google, Tokopedia, Gojek, Traveloka",
+      "date": "January 2025",
+      "description": "Graduation certificate of the Machine Learning cohort program with a final distinction score of 85.00/100.00."
+    },
+    {
+      "title": "2nd Place, NASPO Olympiad",
+      "issuer": "Universitas Gadjah Mada (UGM)",
+      "date": "2026",
+      "description": "2nd Place in the National Applied Science Project Olympiad in the applied informatics category."
+    },
+    {
+      "title": "Vocational Competency Certification (Software Engineering)",
+      "issuer": "LSP Senopati Sidoarjo",
+      "date": "May 2022",
+      "description": "Achieved 'Highly Competent' rating in the Software Engineering Laravel competency certification."
+    }
+  ]
+}

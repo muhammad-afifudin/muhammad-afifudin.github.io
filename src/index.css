@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Commit Mono', Menlo, Monaco, Consolas, monospace;
+  
+  --color-void: #000000;
+  --color-graphite: #292d30;
+  --color-apple-blue: #0A84FF;
+  --color-apple-gray: #86868B;
+  --color-bone: #f0f0f0;
+  --color-ash: #a1a4a5;
+  --color-smoke: #abafb4;
+  --color-pulse-green: #3ad389;
+  --color-signal-blue: #3b9eff;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: #000000;
+    color: #f0f0f0;
+  }
+
+  body {
+    background-color: #000000;
+    color: #f0f0f0;
+  }
+
+  /* Custom Webkit Scrollbars in Dark Apple Graphite */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #292d30;
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3e4448;
+  }
+}
+
+/* Accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Apple & Resend Style Utilities */
+.resend-canvas {
+  background-color: #000000;
+  color: #f0f0f0;
+}
+
+.resend-card {
+  background-color: #000000;
+  border: 1px solid #292d30;
+  border-radius: 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resend-card:hover {
+  border-color: rgba(255, 255, 255, 0.20);
+}
+
+.resend-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  color: #ffffff;
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.15s ease-out;
+  cursor: pointer;
+}
+
+.resend-btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.50);
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* Dark Apple Glass Badges */
+.resend-badge {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #F5F5F7;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 6px;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.resend-badge:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.20);
+  color: #ffffff;
+}
+
+/* Apple Pill Status */
+.resend-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 13px;
+  color: #f0f0f0;
+  background: rgba(255, 255, 255, 0.03);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.resend-pill:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.code-window {
+  background-color: #050505;
+  border: 1px solid #292d30;
+  border-radius: 16px;
+  font-family: var(--font-mono);
+}
