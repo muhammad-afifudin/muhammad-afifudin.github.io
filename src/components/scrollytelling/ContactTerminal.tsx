@@ -13,24 +13,24 @@ export const ContactTerminal: React.FC = () => {
   };
 
   return (
-    <section id="contact-section" className="relative bg-[#000000] border-t border-[#292d30] py-24 px-4 md:px-8">
+    <section id="contact-section" className="relative bg-[#0b0c0e] border-t border-white/[0.08] py-24 px-4 md:px-8">
       <div className="max-w-[1100px] mx-auto">
-        <div className="resend-card p-8 md:p-14 bg-[#000000] border border-[#292d30] relative overflow-hidden">
+        <div className="resend-card p-8 md:p-14 bg-[#121418] border border-white/10 relative overflow-hidden">
           {/* Top Status */}
-          <div className="flex items-center justify-between pb-6 border-b border-[#292d30] mb-8">
+          <div className="flex items-center justify-between pb-6 border-b border-white/10 mb-8">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#3ad389] animate-pulse" />
-              <span className="font-mono text-xs text-[#3ad389]">READY FOR DISCUSSIONS</span>
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="font-mono text-xs text-emerald-400">READY FOR DISCUSSIONS</span>
             </div>
-            <span className="font-mono text-xs text-[#6e727a]">ENDPOINT // CONTACT</span>
+            <span className="font-mono text-xs text-white/40">ENDPOINT // CONTACT</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7">
-              <h2 className="text-3xl md:text-5xl font-medium tracking-[-0.04em] text-white mb-4">
+              <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-4 font-display">
                 Let's build reliable systems together.
               </h2>
-              <p className="text-base text-[#a1a4a5] leading-relaxed mb-8 max-w-xl">
+              <p className="text-base text-white/60 leading-relaxed mb-8 max-w-xl">
                 Whether you need a scalable backend architecture in Laravel/FastAPI, or machine learning model deployment into production, I am open to full-time roles and collaborative ventures.
               </p>
 

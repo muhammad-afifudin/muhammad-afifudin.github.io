@@ -186,7 +186,7 @@ Sent via portfolio contact form`;
               </div>
 
               <div className="mt-6 pt-4 border-t border-[#292d30] text-xs font-mono text-[#a1a4a5]">
-                Available for engineering positions in Surabaya, remote engagements worldwide, and technical consultancy.
+                Available for full-time engineering roles in Sidoarjo, Surabaya, remote engagements, and machine learning projects.
               </div>
             </div>
           </div>

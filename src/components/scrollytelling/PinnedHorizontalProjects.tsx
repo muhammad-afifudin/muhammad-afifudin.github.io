@@ -26,8 +26,8 @@ export const PinnedHorizontalProjects: React.FC = () => {
     offset: ['start start', 'end end'],
   });
 
-  // Calculate translation: shift by ~67% across 3 wide cards
-  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-67%']);
+  // Calculate translation: shift by ~75% across 4 wide cards
+  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-75%']);
   const progressScaleX = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
@@ -36,8 +36,8 @@ export const PinnedHorizontalProjects: React.FC = () => {
       ref={targetRef}
       style={{ position: 'relative' }}
       className={`w-full ${
-        isMobile ? 'h-auto py-16' : 'h-[300vh]'
-      } bg-[#000000] border-t border-[#292d30]`}
+        isMobile ? 'h-auto py-16' : 'h-[380vh]'
+      } bg-[#0b0c0e] border-t border-white/[0.08]`}
     >
       {/* Sticky Viewport Container on Desktop, Normal Flow on Mobile */}
       <div
@@ -53,13 +53,13 @@ export const PinnedHorizontalProjects: React.FC = () => {
         } max-w-[1400px] mx-auto px-4 md:px-8`}
       >
         {/* Section Header */}
-        <div className="w-full flex flex-col md:flex-row md:items-end justify-between mb-4 pb-4 border-b border-[#292d30]">
+        <div className="w-full flex flex-col md:flex-row md:items-end justify-between mb-4 pb-4 border-b border-white/[0.08]">
           <div>
-            <div className="inline-flex items-center gap-2 mb-1.5 font-mono text-xs text-[#0A84FF]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0A84FF]" />
+            <div className="inline-flex items-center gap-2 mb-1.5 font-mono text-xs text-white/70">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               <span>SELECTED_ARCHITECTURE_SHOWCASE</span>
             </div>
-            <h2 className="text-2xl md:text-4xl font-medium tracking-[-0.04em] text-white">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white font-display">
               Featured Systems.
             </h2>
           </div>
@@ -69,12 +69,12 @@ export const PinnedHorizontalProjects: React.FC = () => {
               to="/projects"
               className="resend-btn-ghost !text-xs !py-1 !px-2.5 font-mono text-white hover:!border-white group"
             >
-              <span>VIEW FULL CATALOG (7+)</span>
+              <span>VIEW FULL CATALOG (6+)</span>
               <span className="text-[#0A84FF] group-hover:translate-x-0.5 transition-transform">&rarr;</span>
             </Link>
             <div className="flex items-center gap-1.5 px-3 py-1 rounded-[6px] border border-[#292d30] text-[#f0f0f0]">
               <Cpu className="w-3.5 h-3.5 text-[#3ad389]" />
-              <span>3 PRODUCTION CASE STUDIES</span>
+              <span>4 PRODUCTION CASE STUDIES</span>
             </div>
           </div>
         </div>
@@ -111,7 +111,7 @@ export const PinnedHorizontalProjects: React.FC = () => {
           <div className="pt-3 border-t border-[#292d30] flex items-center justify-between text-xs font-mono text-[#6e727a]">
             <span className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-[#0A84FF]" />
-              <span>SCROLL TO ADVANCE // SYSTEM 01 &rarr; 03</span>
+              <span>SCROLL TO ADVANCE // SYSTEM 01 &rarr; 04</span>
             </span>
             <div className="w-56 h-1.5 bg-[#292d30] rounded-full overflow-hidden">
               <motion.div
@@ -146,20 +146,20 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <div className="resend-card p-6 md:p-7 flex flex-col justify-between bg-[#000000] border border-[#292d30] hover:border-[#40464d] transition-colors group">
+    <div className="resend-card p-6 md:p-7 flex flex-col justify-between bg-[#121418] border border-white/10 hover:border-white/25 transition-colors group">
       {/* Top Bar: Number and Status Badge */}
-      <div className="flex items-center justify-between border-b border-[#292d30] pb-3 mb-4">
+      <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
         <div className="flex items-center gap-3">
-          <span className="font-mono text-sm font-semibold text-[#6e727a]">
+          <span className="font-mono text-sm font-semibold text-white/50">
             [{project.number}]
           </span>
-          <span className="font-mono text-xs text-[#0A84FF] uppercase tracking-wider">
+          <span className="font-mono text-xs text-white/80 uppercase tracking-wider">
             {project.badge}
           </span>
         </div>
 
-        <div className="flex items-center gap-1.5 text-xs font-mono text-[#a1a4a5]">
-          <span className="w-2 h-2 rounded-full bg-[#3ad389]" />
+        <div className="flex items-center gap-1.5 text-xs font-mono text-white/60">
+          <span className="w-2 h-2 rounded-full bg-emerald-400" />
           <span>PRODUCTION READY</span>
         </div>
       </div>
@@ -168,14 +168,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
         {/* Left Column: Title, Impact Summary, Metrics */}
         <div className="lg:col-span-7 flex flex-col">
-          <span className="text-[11px] font-mono text-[#a1a4a5] uppercase tracking-wider mb-0.5">
+          <span className="text-[11px] font-mono text-white/50 uppercase tracking-wider mb-0.5">
             {project.category}
           </span>
-          <h3 className="text-xl md:text-2xl font-medium text-white tracking-[-0.02em] mb-2.5">
+          <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-2.5 font-display">
             {project.title}
           </h3>
 
-          <p className="text-xs md:text-sm text-[#a1a4a5] leading-relaxed mb-4 font-normal">
+          <p className="text-xs md:text-sm text-white/60 leading-relaxed mb-4 font-normal">
             {project.description}
           </p>
 
@@ -184,7 +184,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             {project.metrics.map((metric, i) => (
               <span
                 key={i}
-                className="font-mono text-[11px] px-2 py-0.5 rounded-[6px] border border-[#292d30] text-[#f0f0f0] bg-[#0c0e12]"
+                className="font-mono text-[11px] px-2.5 py-1 rounded-full border border-white/10 text-white/90 bg-white/5"
               >
                 {metric}
               </span>

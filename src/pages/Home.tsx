@@ -28,7 +28,7 @@ const Home: React.FC = () => {
   }, [location]);
 
   return (
-    <div className="w-full bg-[#000000] text-[#f0f0f0]">
+    <div className="w-full bg-[#0b0c0e] text-[#f1f5f9]">
       {/* 1. HOME: Hero Section with 3D Cube & Scroll Indicator (#home) */}
       <HeroSection />
 

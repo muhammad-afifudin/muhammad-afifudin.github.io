@@ -20,23 +20,23 @@ export const TimelineExperience: React.FC = () => {
     <section
       id="experience"
       ref={containerRef}
-      className="relative bg-[#000000] border-t border-[#292d30] py-24 px-4 md:px-8"
+      className="relative bg-[#0b0c0e] border-t border-white/[0.08] py-24 px-4 md:px-8"
     >
       <div className="max-w-[1100px] mx-auto">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#292d30]">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-white/[0.08]">
           <div>
-            <div className="inline-flex items-center gap-2 mb-2 font-mono text-xs text-[#0A84FF]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0A84FF]" />
+            <div className="inline-flex items-center gap-2 mb-2 font-mono text-xs text-white/70">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
               <span>CAREER_&_ENGINEERING_MILESTONES</span>
             </div>
-            <h2 className="text-3xl md:text-5xl font-medium tracking-[-0.04em] text-white">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white font-display">
               Experience & Timeline.
             </h2>
           </div>
 
-          <div className="mt-4 md:mt-0 font-mono text-xs text-[#a1a4a5] flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-[#3b9eff]" />
+          <div className="mt-4 md:mt-0 font-mono text-xs text-white/50 flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-emerald-400" />
             <span>SCROLL DRIVES SYSTEM TIMELINE</span>
           </div>
         </div>
@@ -94,17 +94,17 @@ const TimelineCard: React.FC<TimelineCardProps> = ({ exp, index }) => {
     >
       {/* Node Dot attached to the vertical line */}
       <div className="absolute -left-[24px] md:-left-[40px] top-1.5 flex items-center justify-center">
-        <div className="w-[15px] h-[15px] rounded-full border border-[#292d30] bg-[#000000] flex items-center justify-center group-hover:border-[#0A84FF] transition-colors">
-          <div className="w-1.5 h-1.5 rounded-full bg-[#0A84FF] group-hover:scale-125 transition-transform" />
+        <div className="w-[15px] h-[15px] rounded-full border border-white/20 bg-[#0b0c0e] flex items-center justify-center group-hover:border-white transition-colors">
+          <div className="w-1.5 h-1.5 rounded-full bg-white group-hover:scale-125 transition-transform" />
         </div>
       </div>
 
       {/* Card Body */}
-      <div className="resend-card w-full p-6 md:p-8 bg-[#000000] border border-[#292d30] hover:border-[#40464c] transition-colors">
+      <div className="resend-card w-full p-6 md:p-8 bg-[#121418] border border-white/10 hover:border-white/25 transition-colors">
         {/* Header: Period & Type Pill */}
-        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#292d30]/70 pb-4 mb-5">
-          <div className="flex items-center gap-2 font-mono text-xs text-[#a1a4a5]">
-            <Calendar className="w-3.5 h-3.5 text-[#0A84FF]" />
+        <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4 mb-5">
+          <div className="flex items-center gap-2 font-mono text-xs text-white/60">
+            <Calendar className="w-3.5 h-3.5 text-white/80" />
             <span>{exp.period}</span>
           </div>
 

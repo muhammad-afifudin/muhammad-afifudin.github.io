@@ -19,7 +19,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#000000] text-[#f0f0f0] selection:bg-[#0A84FF]/25 selection:text-white antialiased">
+    <div className="min-h-screen flex flex-col bg-[#0b0c0e] text-[#f1f5f9] selection:bg-white/20 selection:text-white antialiased">
       <div className="flex flex-col min-h-screen relative z-10">
         <Navbar />
 

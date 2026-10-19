@@ -3,14 +3,14 @@
     "name": "Muhammad Afifudin",
     "title": "Web Application Developer, Backend Engineer, & Machine Learning Practitioner",
     "subtitle": "Specializing in Laravel, FastAPI, Scikit-Learn, and Scalable Web Systems",
-    "bio": "IT graduate from Politeknik Negeri Jember (GPA 3.80) with hands-on experience in web application development, backend engineering, and machine learning implementation. Experienced in building high-performance systems with PHP, Laravel, MySQL, Python, and REST APIs. Proven track record building recommendation engines, computer vision monitoring platforms, and client-oriented digital solutions.",
-    "city": "Waru, Sidoarjo, Jawa Timur, Indonesia",
+    "bio": "IT graduate with hands-on experience in web application development, backend development, database management, and machine learning implementation. Experienced in building practical web-based systems using PHP, Laravel, MySQL, Python, and REST APIs. Developed projects involving course registration management, machine learning-based recommendation systems, and client-oriented digital solutions. Strong interest in software development, backend engineering, and building scalable, user-focused applications.",
+    "city": "Waru, Sidoarjo, Jawa Timur",
     "email": "muhafif1412@gmail.com",
-    "phone": "+62 821 3262 4998",
+    "phone": "082132624998",
     "github": "https://github.com/muhammad-afifudin",
     "instagram": "https://www.instagram.com/_afifdn/",
     "linkedin": "https://www.linkedin.com/in/muhammad-afifudin-70b53724a/",
-    "resumeUrl": "https://drive.google.com/file/d/14qdfRG8ACY59FmOKZwG-Dzm33D2XRQAI/view?usp=sharing"
+    "resumeUrl": "https://muhammad-afifudin.github.io/"
   },
   "featuredProjects": [
     {
@@ -19,35 +19,48 @@
       "title": "Brilliant EdTech ML",
       "category": "Machine Learning & Backend",
       "badge": "FASTAPI • LARAVEL • RANDOM FOREST",
-      "description": "Machine learning-based English learning level recommendation system. Implements a Random Forest classification model trained and integrated via a high-performance FastAPI microservice, connected directly to a Laravel web portal for automated student level recommendations.",
-      "metrics": ["Accuracy: 94.6%", "Inference: <45ms", "Microservice API"],
-      "tags": ["Python", "FastAPI", "Random Forest", "Laravel", "Scikit-Learn", "MySQL"],
+      "description": "Machine learning-based system to recommend appropriate English learning levels based on student data. Implemented a Random Forest classification model integrated via FastAPI prediction services with a Laravel web portal for automated student level recommendations.",
+      "metrics": ["Random Forest", "FastAPI Service", "Laravel Integration"],
+      "tags": ["Python", "Scikit-learn", "Random Forest", "FastAPI", "Laravel", "PHP", "MySQL"],
       "liveUrl": "",
       "githubUrl": "https://github.com/muhammad-afifudin",
       "codeSnippet": "POST /api/v1/recommend-level\n{\n  \"student_id\": \"STD-2025-084\",\n  \"assessment_scores\": [88, 92, 79, 85],\n  \"learning_pace\": \"accelerated\"\n}\n// Response: { \"recommended_level\": \"Advanced-B2\", \"confidence\": 0.946 }"
     },
     {
-      "id": "vehicle-monitoring",
+      "id": "brilliant-portal",
       "number": "02",
-      "title": "Vehicle Monitoring Dashboard",
-      "category": "Computer Vision & IoT Web",
-      "badge": "FLASK • COMPUTER VISION • LARAVEL",
-      "description": "Smart parking area monitoring system based on Computer Vision for BUMDES Krian Cafe Dewi Pandawa. Processes real-time vehicle detection video feeds via a Flask microservice and delivers parking capacity analytics to a centralized Laravel dashboard.",
-      "metrics": ["30 FPS Detection", "Real-Time Telemetry", "Centralized DB"],
-      "tags": ["Python", "Computer Vision", "Flask", "Laravel", "MySQL", "Scikit-Learn"],
+      "title": "Brilliant Course Registration Portal",
+      "category": "Web Application",
+      "badge": "LARAVEL • LIVEWIRE • ALPINE.JS",
+      "description": "Web-based system for managing course marketing and student registration. Built using Laravel MVC architecture, Livewire interactive workflows, multi-step registration forms, Laravel Breeze authentication, and an administrative dashboard for programs, pricing, and registration data.",
+      "metrics": ["Multi-Step Form", "Admin Dashboard", "Structured MySQL"],
+      "tags": ["Laravel", "PHP", "Livewire", "Blade", "MySQL", "JavaScript", "Alpine.js"],
       "liveUrl": "",
       "githubUrl": "https://github.com/muhammad-afifudin",
-      "codeSnippet": "STREAM /parking/camera-01 [ACTIVE]\n[INFO] YOLOv8/CV Detection Engine: 30.2 FPS\n[INFO] Occupied: 24/30 slots | Free: 6 slots\n[SYNC] Sent telemetry payload to Laravel backend (HTTP 200 OK)"
+      "codeSnippet": "class RegistrationWorkflow extends Component\n{\n  public $step = 1;\n  public $course_id, $applicant_data;\n\n  public function submit()\n  {\n    $this->validate();\n    DB::transaction(fn() => Enrollment::create($this->payload()));\n  }\n}"
+    },
+    {
+      "id": "vehicle-monitoring",
+      "number": "03",
+      "title": "Vehicle Monitoring Dashboard",
+      "category": "Computer Vision & Web",
+      "badge": "FLASK • COMPUTER VISION • LARAVEL",
+      "description": "Web-based vehicle monitoring system for parking area at BUMDES Ponokawan Krian Cafe Dewi Pandawa. Integrates computer vision vehicle detection results into a centralized Laravel monitoring dashboard to display real-time vehicle activity.",
+      "metrics": ["Computer Vision", "Real-Time Telemetry", "Centralized DB"],
+      "tags": ["Python", "Scikit-learn", "Computer Vision", "Flask", "Laravel", "PHP", "MySQL"],
+      "liveUrl": "",
+      "githubUrl": "https://github.com/muhammad-afifudin",
+      "codeSnippet": "STREAM /parking/camera-01 [ACTIVE]\n[INFO] CV Detection Engine: Vehicle Detected\n[INFO] Occupied: 24/30 slots | Free: 6 slots\n[SYNC] Sent telemetry payload to Laravel backend (HTTP 200 OK)"
     },
     {
       "id": "finpocket",
-      "number": "03",
-      "title": "FinPocket",
+      "number": "04",
+      "title": "FinPocket Financial AI",
       "category": "Machine Learning • Bangkit Capstone",
       "badge": "SCIKIT-LEARN • REST API • CLOUD",
-      "description": "Personal financial planning recommendation application developed as a Bangkit Academy Capstone project (Google, GoTo, Traveloka). Designed feature engineering datasets and trained ML models served via REST API for Mobile and Cloud team integration.",
+      "description": "Personal finance recommendation system using machine learning. Performed dataset preprocessing, feature engineering, and trained predictive models served via REST API in collaboration with Cloud Computing and Mobile Development teams.",
       "metrics": ["Bangkit Capstone", "REST API Service", "Cross-Platform Sync"],
-      "tags": ["Python", "Machine Learning", "Scikit-Learn", "REST API", "Google Cloud"],
+      "tags": ["Python", "Machine Learning", "Scikit-learn", "REST API"],
       "liveUrl": "",
       "githubUrl": "https://github.com/muhammad-afifudin",
       "codeSnippet": "POST /v1/predictions/financial-plan\n{\n  \"monthly_income\": 7500000,\n  \"fixed_expenses\": 3200000,\n  \"financial_goal\": \"emergency_fund\"\n}\n// Response: { \"savings_allocation\": 0.28, \"risk_tolerance\": \"moderate\" }"
@@ -56,171 +69,307 @@
   "experiences": [
     {
       "id": "exp-1",
-      "role": "Machine Learning Engineer",
-      "company": "Brilliant International Education Plus",
-      "location": "Kediri, East Java",
-      "period": "Aug 2025 - Jun 2026",
-      "type": "Full-time",
+      "role": "Machine Learning Engineer Intern",
+      "company": "Brilliant English Course",
+      "location": "Kediri",
+      "period": "Dec 2025 - Jun 2026",
+      "type": "Internship",
       "tech": ["Python", "Scikit-learn", "Random Forest", "FastAPI", "Laravel", "PHP", "MySQL"],
       "highlights": [
         "Developed a machine learning-based system to recommend appropriate English learning levels based on student data.",
-        "Implemented a Random Forest classification model using structured training and testing datasets.",
-        "Integrated the trained model with FastAPI to deliver lightning-fast prediction microservices to the Laravel web app."
+        "Implemented a Random Forest classification model using training and testing datasets.",
+        "Performed data preparation and preprocessing to support the machine learning workflow.",
+        "Integrated the trained machine learning model with FastAPI to provide prediction services.",
+        "Integrated the prediction API with a Laravel-based web application.",
+        "Designed the system to provide automated learning-level recommendations through a web interface.",
+        "Applied machine learning concepts to solve a practical education-related problem."
       ]
     },
     {
       "id": "exp-2",
-      "role": "Web Developer",
+      "role": "Web Developer Intern",
       "company": "Brilliant International Education Plus",
-      "location": "Kediri, East Java",
+      "location": "Kediri",
       "period": "Jul 2025 - Nov 2025",
-      "type": "Contract",
+      "type": "Internship",
       "tech": ["Laravel", "PHP", "Livewire", "Blade", "MySQL", "JavaScript", "Alpine.js"],
       "highlights": [
-        "Developed a web-based course marketing and student registration platform using Laravel MVC architecture.",
-        "Engineered reactive multi-step registration forms and administrative dashboards with Livewire & Alpine.js.",
-        "Secured authentication with Laravel Breeze and architected relational MySQL schemas for high transaction reliability."
+        "Developed a web-based system for managing course marketing and student registration.",
+        "Built the application using the Laravel MVC architecture.",
+        "Implemented interactive interfaces and application workflows using Livewire.",
+        "Developed a multi-step registration form to simplify the course registration process.",
+        "Implemented authentication using Laravel Breeze.",
+        "Developed an administrative dashboard for managing course programs, pricing, features, and registration data.",
+        "Implemented CRUD functionality for managing application data.",
+        "Designed the system with a structured MySQL database for reliable data management."
       ]
     },
     {
       "id": "exp-3",
-      "role": "Web Developer (Computer Vision Integration)",
+      "role": "Web Developer Intern",
       "company": "BUMDES Ponokawan Krian Cafe Dewi Pandawa",
-      "location": "Sidoarjo, East Java",
+      "location": "Sidoarjo",
       "period": "Feb 2025 - Jun 2025",
-      "type": "Project",
-      "tech": ["Python", "Computer Vision", "Flask", "Laravel", "PHP", "MySQL"],
+      "type": "Internship",
+      "tech": ["Python", "Scikit-learn", "Computer Vision", "Flask", "Laravel", "PHP", "MySQL"],
       "highlights": [
-        "Developed a web-based vehicle monitoring system for parking area automation.",
-        "Engineered a real-time monitoring dashboard to display vehicle detection counts and occupancy status.",
-        "Integrated Flask computer vision inference outputs into a centralized Laravel web management interface."
+        "Developed a web-based vehicle monitoring system for the parking area.",
+        "Built a monitoring dashboard to display vehicle detection information.",
+        "Integrated vehicle detection results into the web-based information system.",
+        "Supported the development of a centralized interface for monitoring vehicle activity."
       ]
     },
     {
       "id": "exp-4",
-      "role": "Machine Learning Engineer (Capstone Project)",
-      "company": "Bangkit Academy led by Google, Tokopedia, Gojek, Traveloka",
+      "role": "Machine Learning Engineer Intern",
+      "company": "Bangkit Academy Capstone FinPocket",
       "location": "Remote",
       "period": "Sep 2024 - Jan 2025",
-      "type": "Cohort Certification",
-      "tech": ["Python", "Machine Learning", "Scikit-learn", "REST API", "Google Cloud"],
+      "type": "Internship",
+      "tech": ["Python", "Machine Learning", "Scikit-learn", "REST API"],
       "highlights": [
-        "Graduated from the intensive Google-led Machine Learning curriculum with final distinction score 85.00/100.00.",
-        "Built FinPocket: dataset preprocessing, feature engineering, and predictive models for personalized financial guidance.",
-        "Collaborated with Cloud Computing and Mobile Development teams to deploy production-ready REST APIs."
+        "Developed a personal finance recommendation system using machine learning.",
+        "Performed dataset preprocessing and feature engineering to prepare data for model development.",
+        "Implemented machine learning models to generate personalized financial recommendations.",
+        "Supported the integration of the machine learning model into the application through a REST API.",
+        "Collaborated with Cloud Computing and Mobile Development teams to integrate the machine learning component into the overall application."
       ]
     },
     {
       "id": "exp-5",
-      "role": "Bachelor of Applied Informatics Engineering",
-      "company": "Politeknik Negeri Jember",
-      "location": "Sidoarjo Campus",
-      "period": "Jun 2022 - Jun 2026",
-      "type": "Education • GPA 3.80 / 4.00",
-      "tech": ["Software Engineering", "Laravel", "Python", "Data Structures", "MySQL"],
+      "role": "Web Developer Intern",
+      "company": "SMP Muhammadiyah 1 Gresik",
+      "location": "Gresik",
+      "period": "Feb 2024 - Jun 2024",
+      "type": "Internship",
+      "tech": ["Laravel", "PHP", "MySQL", "JavaScript"],
       "highlights": [
-        "2nd Place, National Applied Science Project Olympiad (NASPO), Universitas Gadjah Mada (UGM), 2026.",
-        "Finalist, 6th National Informatics Student Competition Hackathon.",
-        "Recipient of Funding, 2024 Intensive Student Creativity Program (PKM)."
+        "Developed a web-based New Student Admission (PPDB) system.",
+        "Built an online registration system to support the student admission process.",
+        "Developed an administrative dashboard for managing applicant data.",
+        "Managed applicant information and registration workflows through a centralized database."
+      ]
+    },
+    {
+      "id": "exp-6",
+      "role": "Web Developer Intern",
+      "company": "Vannamei Shrimp Farm",
+      "location": "Sidoarjo",
+      "period": "Jul 2023 - Nov 2023",
+      "type": "Internship",
+      "tech": ["Laravel", "PHP", "MySQL", "JavaScript"],
+      "highlights": [
+        "Developed a digital promotional website for a vannamei shrimp farming business.",
+        "Created an online platform to improve access to information about products and services.",
+        "Structured website content to support digital promotion and business visibility."
+      ]
+    },
+    {
+      "id": "exp-7",
+      "role": "IT Support Intern",
+      "company": "BPMTPK Kemendikbud",
+      "location": "Sidoarjo",
+      "period": "Apr 2021 - Jun 2021",
+      "type": "Internship",
+      "tech": ["IT Support", "Hardware", "Networking", "Troubleshooting", "System Maintenance"],
+      "highlights": [
+        "Maintained computer equipment and ensured reliable network connectivity.",
+        "Installed and configured software applications on computers.",
+        "Assisted with basic IT infrastructure maintenance and troubleshooting."
       ]
     }
   ],
   "skills": [
-    { "name": "PHP", "icon": "/assets/img/skill/php.png", "category": "Backend" },
-    { "name": "Laravel", "icon": "/assets/img/skill/laravel.png", "category": "Backend" },
-    { "name": "Python", "icon": "/assets/img/skill/python.png", "category": "Backend" },
-    { "name": "FastAPI", "icon": "/assets/img/skill/python.png", "category": "Backend" },
-    { "name": "MySQL", "icon": "/assets/img/skill/mysql.png", "category": "Backend" },
-    { "name": "Scikit-Learn", "icon": "/assets/img/skill/python.png", "category": "Machine Learning" },
-    { "name": "Random Forest", "icon": "/assets/img/skill/python.png", "category": "Machine Learning" },
-    { "name": "Computer Vision", "icon": "/assets/img/skill/python.png", "category": "Machine Learning" },
-    { "name": "Livewire", "icon": "/assets/img/skill/laravel.png", "category": "Frontend" },
-    { "name": "JavaScript", "icon": "/assets/img/skill/html.png", "category": "Frontend" },
-    { "name": "Tailwind CSS", "icon": "/assets/img/skill/css.png", "category": "Frontend" },
-    { "name": "Git & GitHub", "icon": "/assets/img/skill/github.png", "category": "Tools" }
+    { "name": "PHP", "icon": "/assets/img/skill/php.png", "category": "Programming Languages" },
+    { "name": "Python", "icon": "/assets/img/skill/python.png", "category": "Programming Languages" },
+    { "name": "Java", "icon": "/assets/img/skill/java.png", "category": "Programming Languages" },
+    { "name": "SQL", "icon": "/assets/img/skill/mysql.png", "category": "Programming Languages" },
+    { "name": "MySQL", "icon": "/assets/img/skill/mysql.png", "category": "Databases" },
+    { "name": "Firebase", "icon": "/assets/img/skill/firebase.png", "category": "Databases" },
+    { "name": "Laravel", "icon": "/assets/img/skill/laravel.png", "category": "Frameworks & Libraries" },
+    { "name": "Livewire", "icon": "/assets/img/skill/laravel.png", "category": "Frameworks & Libraries" },
+    { "name": "Bootstrap", "icon": "/assets/img/skill/bootstrap.png", "category": "Frameworks & Libraries" },
+    { "name": "Tailwind", "icon": "/assets/img/skill/css.png", "category": "Frameworks & Libraries" },
+    { "name": "TensorFlow", "icon": "/assets/img/skill/python.png", "category": "Frameworks & Libraries" },
+    { "name": "Scikit-Learn", "icon": "/assets/img/skill/python.png", "category": "Frameworks & Libraries" },
+    { "name": "Data Preprocessing", "icon": "/assets/img/skill/python.png", "category": "Machine Learning" },
+    { "name": "Feature Engineering", "icon": "/assets/img/skill/python.png", "category": "Machine Learning" },
+    { "name": "Classification", "icon": "/assets/img/skill/python.png", "category": "Machine Learning" },
+    { "name": "Model Evaluation", "icon": "/assets/img/skill/python.png", "category": "Machine Learning" },
+    { "name": "Git", "icon": "/assets/img/skill/github.png", "category": "Tools & Platforms" },
+    { "name": "GitHub", "icon": "/assets/img/skill/github.png", "category": "Tools & Platforms" },
+    { "name": "Postman", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg", "category": "Tools & Platforms" },
+    { "name": "Visual Studio Code", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", "category": "Tools & Platforms" },
+    { "name": "Laragon", "icon": "/assets/img/skill/php.png", "category": "Tools & Platforms" },
+    { "name": "Google Colab", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg", "category": "Tools & Platforms" },
+    { "name": "Communication", "icon": "https://cdn-icons-png.flaticon.com/512/1256/1256650.png", "category": "Soft Skills" },
+    { "name": "Teamwork", "icon": "https://cdn-icons-png.flaticon.com/512/1256/1256650.png", "category": "Soft Skills" },
+    { "name": "Problem Solving", "icon": "https://cdn-icons-png.flaticon.com/512/1256/1256650.png", "category": "Soft Skills" },
+    { "name": "Time Management", "icon": "https://cdn-icons-png.flaticon.com/512/1256/1256650.png", "category": "Soft Skills" },
+    { "name": "Adaptability", "icon": "https://cdn-icons-png.flaticon.com/512/1256/1256650.png", "category": "Soft Skills" }
   ],
   "education": [
     {
       "degree": "Bachelor of Applied Informatics Engineering",
       "institution": "Politeknik Negeri Jember - Sidoarjo",
       "period": "Jun 2022 - Jun 2026",
-      "description": "Graduated with GPA 3.80/4.00. 2nd Place NASPO UGM 2026, Finalist 6th National Informatics Student Competition Hackathon, Recipient of Funding PKM 2024."
+      "description": "GPA 3.80 / 4.00. 2nd Place, National Applied Science Project Olympiad (NASPO), Universitas Gadjah Mada, 2026. Finalist, 6th National Informatics Student Competition Hackathon (KMIPN IV). Recipient of Funding, 2024 Intensive Student Creativity Program (PKM). Achieved Competent rating in the Web Developer Certification by LSP P1 Politeknik Negeri Jember."
     },
     {
       "degree": "Software Engineering",
       "institution": "SMK Senopati Sedati - Sidoarjo",
       "period": "Jun 2019 - Jun 2022",
-      "description": "Score 89.00/100.00. 2nd Best Graduate, Software Engineering Program. Achieved Highly Competent rating in Laravel competency assessment."
+      "description": "Graduation Score: 89.00 / 100.00. 2nd Best Graduate, Software Engineering Program. Achieved Highly Competent rating in the Laravel competency assessment."
     }
   ],
   "experience": [
     {
-      "role": "Machine Learning Engineer",
-      "company": "Brilliant International Education Plus",
-      "period": "Aug 2025 - Jun 2026",
+      "role": "Machine Learning Engineer Intern",
+      "company": "Brilliant English Course - Kediri",
+      "period": "Dec 2025 - Jun 2026",
       "bullets": [
         "Developed a machine learning-based system to recommend appropriate English learning levels based on student data.",
-        "Implemented Random Forest classification model with FastAPI and Laravel integration."
+        "Implemented a Random Forest classification model using training and testing datasets.",
+        "Performed data preparation and preprocessing to support the machine learning workflow.",
+        "Integrated the trained machine learning model with FastAPI to provide prediction services.",
+        "Integrated the prediction API with a Laravel-based web application.",
+        "Designed the system to provide automated learning-level recommendations through a web interface.",
+        "Applied machine learning concepts to solve a practical education-related problem."
       ]
     },
     {
-      "role": "Web Developer",
-      "company": "Brilliant International Education Plus",
+      "role": "Web Developer Intern",
+      "company": "Brilliant International Education Plus - Kediri",
       "period": "Jul 2025 - Nov 2025",
       "bullets": [
-        "Developed a web-based course marketing and student registration platform using Laravel and Livewire.",
-        "Engineered multi-step registration forms and administrative dashboards."
+        "Developed a web-based system for managing course marketing and student registration.",
+        "Built the application using the Laravel MVC architecture.",
+        "Implemented interactive interfaces and application workflows using Livewire.",
+        "Developed a multi-step registration form to simplify the course registration process.",
+        "Implemented authentication using Laravel Breeze.",
+        "Developed an administrative dashboard for managing course programs, pricing, features, and registration data.",
+        "Implemented CRUD functionality for managing application data.",
+        "Designed the system with a structured MySQL database for reliable data management."
       ]
     },
     {
-      "role": "Web Developer (Computer Vision)",
-      "company": "BUMDES Ponokawan Krian Cafe Dewi Pandawa",
+      "role": "Web Developer Intern",
+      "company": "BUMDES Ponokawan Krian Cafe Dewi Pandawa - Sidoarjo",
       "period": "Feb 2025 - Jun 2025",
       "bullets": [
-        "Developed web-based vehicle monitoring system for parking area using Computer Vision and Flask.",
-        "Built administrative monitoring dashboard integrated with vehicle detection results."
+        "Developed a web-based vehicle monitoring system for the parking area.",
+        "Built a monitoring dashboard to display vehicle detection information.",
+        "Integrated vehicle detection results into the web-based information system.",
+        "Supported the development of a centralized interface for monitoring vehicle activity."
       ]
     },
     {
-      "role": "Machine Learning Engineer",
-      "company": "Bangkit Academy Capstone FinPocket",
+      "role": "Machine Learning Engineer Intern",
+      "company": "Bangkit Academy Capstone FinPocket - Remote",
       "period": "Sep 2024 - Jan 2025",
       "bullets": [
-        "Developed personal finance recommendation system using Machine Learning.",
-        "Performed dataset preprocessing and served predictive recommendations via REST API."
+        "Developed a personal finance recommendation system using machine learning.",
+        "Performed dataset preprocessing and feature engineering to prepare data for model development.",
+        "Implemented machine learning models to generate personalized financial recommendations.",
+        "Supported the integration of the machine learning model into the application through a REST API.",
+        "Collaborated with Cloud Computing and Mobile Development teams to integrate the machine learning component into the overall application."
+      ]
+    },
+    {
+      "role": "Web Developer Intern",
+      "company": "SMP Muhammadiyah 1 Gresik - Gresik",
+      "period": "Feb 2024 - Jun 2024",
+      "bullets": [
+        "Developed a web-based New Student Admission (PPDB) system.",
+        "Built an online registration system to support the student admission process.",
+        "Developed an administrative dashboard for managing applicant data.",
+        "Managed applicant information and registration workflows through a centralized database."
+      ]
+    },
+    {
+      "role": "Web Developer Intern",
+      "company": "Vannamei Shrimp Farm - Sidoarjo",
+      "period": "Jul 2023 - Nov 2023",
+      "bullets": [
+        "Developed a digital promotional website for a vannamei shrimp farming business.",
+        "Created an online platform to improve access to information about products and services.",
+        "Structured website content to support digital promotion and business visibility."
+      ]
+    },
+    {
+      "role": "IT Support Intern",
+      "company": "BPMTPK Kemendikbud - Sidoarjo",
+      "period": "Apr 2021 - Jun 2021",
+      "bullets": [
+        "Maintained computer equipment and ensured reliable network connectivity.",
+        "Installed and configured software applications on computers.",
+        "Assisted with basic IT infrastructure maintenance and troubleshooting."
       ]
     }
   ],
   "projects": [
     {
       "title": "Brilliant EdTech ML",
-      "category": "Web",
+      "category": "Machine Learning",
       "image": "/assets/img/portfolio/img-ppdb.png",
-      "description": "English learning level recommendation system built with Random Forest, FastAPI, and Laravel.",
+      "description": "English learning level recommendation system using Random Forest classification model integrated via FastAPI prediction services with a Laravel web application.",
       "liveUrl": "",
       "githubUrl": "https://github.com/muhammad-afifudin",
-      "tags": ["FastAPI", "Laravel", "Random Forest", "Python"]
+      "tags": ["Python", "Scikit-learn", "Random Forest", "FastAPI", "Laravel", "MySQL"]
+    },
+    {
+      "title": "Brilliant Course Marketing & Registration Platform",
+      "category": "Web",
+      "image": "/assets/img/portfolio/img-pos.png",
+      "description": "Web-based system for managing course marketing and student registration with multi-step registration forms, Laravel Breeze authentication, and an administrative dashboard.",
+      "liveUrl": "",
+      "githubUrl": "https://github.com/muhammad-afifudin",
+      "tags": ["Laravel", "PHP", "Livewire", "Blade", "MySQL", "JavaScript", "Alpine.js"]
     },
     {
       "title": "Vehicle Monitoring Dashboard",
-      "category": "Web",
-      "image": "/assets/img/portfolio/img-tambak.png",
-      "description": "Computer Vision-based parking monitoring system with Flask and Laravel for BUMDES Krian Cafe Dewi Pandawa.",
+      "category": "Systems",
+      "image": "/assets/img/portfolio/img-kamera.png",
+      "description": "Web-based vehicle monitoring system for parking area at BUMDES Ponokawan Krian Cafe Dewi Pandawa with real-time detection telemetry and centralized dashboard.",
       "liveUrl": "",
       "githubUrl": "https://github.com/muhammad-afifudin",
-      "tags": ["Computer Vision", "Flask", "Laravel", "MySQL"]
+      "tags": ["Python", "Scikit-learn", "Computer Vision", "Flask", "Laravel", "MySQL"]
     },
     {
       "title": "FinPocket Financial AI",
-      "category": "Web",
+      "category": "Machine Learning",
       "image": "/assets/img/portfolio/img-keuangan-tambak.png",
-      "description": "Intelligent personal financial planning recommendation system (Bangkit Academy Capstone).",
+      "description": "Personal finance recommendation system using machine learning algorithms, dataset preprocessing, feature engineering, and REST API microservices (Bangkit Academy Capstone).",
       "liveUrl": "",
       "githubUrl": "https://github.com/muhammad-afifudin",
-      "tags": ["Python", "Machine Learning", "REST API"]
+      "tags": ["Python", "Machine Learning", "Scikit-learn", "REST API"]
+    },
+    {
+      "title": "PPDB SMP Muhammadiyah 1 Gresik",
+      "category": "Web",
+      "image": "/assets/img/portfolio/img-ppdb.png",
+      "description": "Web-based New Student Admission (PPDB) online registration system with applicant administration dashboard and centralized database workflows.",
+      "liveUrl": "",
+      "githubUrl": "https://github.com/muhammad-afifudin",
+      "tags": ["Laravel", "PHP", "MySQL", "JavaScript"]
+    },
+    {
+      "title": "Vannamei Shrimp Farm Promotional Website",
+      "category": "Web",
+      "image": "/assets/img/portfolio/img-tambak.png",
+      "description": "Digital promotional website and information platform for a vannamei shrimp farming business to improve digital visibility and access to product data.",
+      "liveUrl": "",
+      "githubUrl": "https://github.com/muhammad-afifudin",
+      "tags": ["Laravel", "PHP", "MySQL", "JavaScript"]
     }
   ],
   "certificates": [
+    {
+      "title": "Bangkit Academy Machine Learning Certification",
+      "issuer": "Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka",
+      "date": "Sep 2024 - Jan 2025",
+      "description": "Completed an intensive machine learning development program with final distinction score 85.00/100.00. Developed FinPocket recommendation system as a Machine Learning Engineer in cross-functional collaboration."
+    },
     {
       "title": "Web Developer Certification",
       "issuer": "LSP P1 Politeknik Negeri Jember",
@@ -228,22 +377,28 @@
       "description": "Achieved Competent rating in the Web Developer national competency certification by LSP P1 Politeknik Negeri Jember."
     },
     {
-      "title": "Bangkit Academy Machine Learning Cohort",
-      "issuer": "Google, Tokopedia, Gojek, Traveloka",
-      "date": "January 2025",
-      "description": "Graduation certificate of the Machine Learning cohort program with a final distinction score of 85.00/100.00."
-    },
-    {
-      "title": "2nd Place, NASPO Olympiad",
+      "title": "2nd Place, National Applied Science Project Olympiad (NASPO)",
       "issuer": "Universitas Gadjah Mada (UGM)",
       "date": "2026",
-      "description": "2nd Place in the National Applied Science Project Olympiad in the applied informatics category."
+      "description": "Awarded 2nd Place in the National Applied Science Project Olympiad (NASPO) held at Universitas Gadjah Mada."
     },
     {
-      "title": "Vocational Competency Certification (Software Engineering)",
-      "issuer": "LSP Senopati Sidoarjo",
-      "date": "May 2022",
-      "description": "Achieved 'Highly Competent' rating in the Software Engineering Laravel competency certification."
+      "title": "Finalist, 6th National Informatics Student Competition Hackathon (KMIPN IV)",
+      "issuer": "KMIPN IV",
+      "date": "2024",
+      "description": "Finalist in the prestigious 6th National Informatics Student Competition Hackathon (KMIPN IV) representing Politeknik Negeri Jember."
+    },
+    {
+      "title": "Recipient of Funding, Intensive Student Creativity Program (PKM)",
+      "issuer": "Kemendikbudristek / Belmawa",
+      "date": "2024",
+      "description": "Successfully awarded national funding in the 2024 Intensive Student Creativity Program (PKM)."
+    },
+    {
+      "title": "Software Engineering Graduate & Laravel Competency Assessment",
+      "issuer": "SMK Senopati Sedati - Sidoarjo",
+      "date": "Jun 2019 - Jun 2022",
+      "description": "2nd Best Graduate in Software Engineering Program (Score 89.00/100.00) & Achieved Highly Competent rating in Laravel competency assessment."
     }
   ]
 }

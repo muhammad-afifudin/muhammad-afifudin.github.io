@@ -8,7 +8,7 @@ const Projects: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  const tabs = ['All', 'Web', 'Mobile', 'Desktop'];
+  const tabs = ['All', 'Web', 'Machine Learning', 'Systems'];
 
   // Filter projects based on category and search query
   const filteredProjects = projects.filter((project: {

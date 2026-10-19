@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
   // Track scroll depth to add backdrop blur
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 150);
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -103,116 +103,114 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`sticky top-0 z-50 transition-all duration-200 border-b ${
-        isScrolled
-          ? 'bg-[#000000]/85 backdrop-blur-md border-[#292d30] py-3.5'
-          : 'bg-[#000000] border-[#292d30]/60 py-4'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isHomePage && !isScrolled
+          ? 'opacity-0 -translate-y-4 pointer-events-none'
+          : 'opacity-100 translate-y-0 pointer-events-auto'
       }`}
     >
-      <div className="max-w-[1240px] mx-auto px-4 md:px-8 flex items-center justify-between">
-        {/* Logo */}
-        <Link
-          to="/"
-          onClick={(e) => {
-            if (isHomePage) {
-              e.preventDefault();
-              document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
-              setActiveSection('home');
-            }
-          }}
-          className="flex items-center gap-2.5 group cursor-pointer"
-        >
-          <div className="w-8 h-8 rounded-[6px] border border-[#292d30] bg-[#000000] flex items-center justify-center font-mono text-xs font-semibold text-white group-hover:border-white/40 transition-colors">
-            MA
-          </div>
-          <span className="font-mono text-sm font-medium tracking-tight text-white group-hover:text-white transition-colors">
-            afifudin<span className="text-[#0A84FF]">.io</span>
-          </span>
-        </Link>
+      <div className="max-w-[1360px] mx-auto px-4 sm:px-6 pt-3 pb-2">
+        <div className="rounded-full bg-[#14161a]/85 backdrop-blur-2xl border border-white/10 px-5 sm:px-7 py-2.5 sm:py-3 flex items-center justify-between shadow-[0_10px_35px_rgba(0,0,0,0.6)]">
+          {/* Logo */}
+          <Link
+            to="/"
+            onClick={(e) => {
+              if (isHomePage) {
+                e.preventDefault();
+                document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
+                setActiveSection('home');
+              }
+            }}
+            className="flex items-center gap-2 group cursor-pointer"
+          >
+            <span className="font-bold text-xs sm:text-sm uppercase tracking-[0.22em] text-white group-hover:text-white/80 transition-colors">
+              AFIFUDIN
+            </span>
+          </Link>
 
-        {/* Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center gap-6">
-          <div className="flex items-center gap-5">
+          {/* Desktop Navigation Links */}
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+            <div className="flex items-center gap-5 lg:gap-7">
+              {NAV_ITEMS.map((item) => {
+                const active = isItemActive(item);
+                return (
+                  <button
+                    key={item.name}
+                    onClick={(e) => handleNavClick(item, e)}
+                    className={`relative py-1 text-xs font-mono tracking-widest uppercase transition-colors cursor-pointer ${
+                      active
+                        ? 'text-white font-medium'
+                        : 'text-white/60 hover:text-white'
+                    }`}
+                  >
+                    <span>{item.name}</span>
+                    {active && (
+                      <span className="absolute -bottom-1 left-0 right-0 h-[1.5px] bg-white rounded-full" />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="h-4 w-[1px] bg-white/15" />
+
+            {/* Quick Resume White Pill CTA */}
+            <a
+              href={personalInfo.resumeUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-white text-zinc-950 font-semibold px-4 py-1.5 text-xs tracking-wider uppercase shadow-md hover:bg-zinc-200 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer inline-flex items-center gap-1.5"
+            >
+              <span>RESUME</span>
+              <ArrowUpRight className="w-3 h-3 text-zinc-950" />
+            </a>
+          </div>
+
+          {/* Mobile menu trigger */}
+          <div className="flex md:hidden items-center gap-3">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-1.5 rounded-full border border-white/15 text-white/80 hover:text-white cursor-pointer"
+              aria-label="Toggle Navigation Menu"
+            >
+              {isOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Drawer Menu */}
+        {isOpen && (
+          <div className="md:hidden mt-2 rounded-2xl bg-[#14161a]/95 backdrop-blur-2xl border border-white/10 p-4 flex flex-col gap-2 shadow-2xl">
             {NAV_ITEMS.map((item) => {
               const active = isItemActive(item);
               return (
                 <button
                   key={item.name}
                   onClick={(e) => handleNavClick(item, e)}
-                  className={`relative py-1 text-xs font-mono uppercase tracking-wider transition-colors cursor-pointer ${
+                  className={`text-left px-3 py-2.5 rounded-xl text-xs font-mono uppercase tracking-wider transition-colors cursor-pointer ${
                     active
-                      ? 'text-[#ffffff] font-medium'
-                      : 'text-[#a1a4a5] hover:text-[#ffffff]'
+                      ? 'bg-white/10 text-white font-medium'
+                      : 'text-white/60 hover:text-white hover:bg-white/5'
                   }`}
                 >
-                  <span>{item.name}</span>
-                  {active && (
-                    <span className="absolute -bottom-1 left-0 right-0 h-[1.5px] bg-[#0A84FF]" />
-                  )}
+                  {item.name}
                 </button>
               );
             })}
-          </div>
 
-          <div className="h-4 w-[1px] bg-[#292d30]" />
-
-          {/* Quick Resume Ghost CTA */}
-          <a
-            href={personalInfo.resumeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="resend-btn-ghost !text-xs !py-1.5 !px-3 font-mono group !border-white/15 hover:!border-white/40"
-          >
-            <span>RESUME.PDF</span>
-            <ArrowUpRight className="w-3 h-3 text-[#6e727a] group-hover:text-white transition-colors" />
-          </a>
-        </div>
-
-        {/* Mobile menu trigger */}
-        <div className="flex lg:hidden items-center gap-3">
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="p-2 rounded-[6px] border border-[#292d30] text-[#f0f0f0] cursor-pointer"
-            aria-label="Toggle Navigation Menu"
-          >
-            {isOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Drawer Menu */}
-      {isOpen && (
-        <div className="lg:hidden bg-[#000000] border-b border-[#292d30] px-4 py-4 flex flex-col gap-2">
-          {NAV_ITEMS.map((item) => {
-            const active = isItemActive(item);
-            return (
-              <button
-                key={item.name}
-                onClick={(e) => handleNavClick(item, e)}
-                className={`text-left px-3 py-2.5 rounded-[6px] text-xs font-mono uppercase tracking-wider transition-colors cursor-pointer ${
-                  active
-                    ? 'bg-[#292d30]/60 text-white font-medium border-l-2 border-[#0A84FF]'
-                    : 'text-[#a1a4a5] hover:text-white hover:bg-[#0c0e12]'
-                }`}
+            <div className="pt-2 border-t border-white/10 mt-1">
+              <a
+                href={personalInfo.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full rounded-full bg-white text-zinc-950 font-semibold py-2 px-4 text-xs tracking-wider uppercase text-center block"
               >
-                {item.name}
-              </button>
-            );
-          })}
-
-          <div className="pt-2 border-t border-[#292d30] mt-1">
-            <a
-              href={personalInfo.resumeUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="resend-btn-ghost w-full justify-between !text-xs font-mono"
-            >
-              <span>DOWNLOAD RESUME.PDF</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-[#6e727a]" />
-            </a>
+                DOWNLOAD RESUME
+              </a>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
     </nav>
   );
 };

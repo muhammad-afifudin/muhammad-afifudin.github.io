@@ -98,7 +98,7 @@ const About: React.FC = () => {
               </div>
               <div>
                 <p className="text-xs text-slate-400 dark:text-slate-500">Availability</p>
-                <p className="text-sm font-medium">Open for Internships / Freelance</p>
+                <p className="text-sm font-medium">Open for Full-time / Engineering Roles</p>
               </div>
             </div>
           </div>
