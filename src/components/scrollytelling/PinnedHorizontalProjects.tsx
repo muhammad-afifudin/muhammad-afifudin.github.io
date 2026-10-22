@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ExternalLink, Github, Code2, ArrowUpRight, Cpu } from 'lucide-react';
 import portfolioData from '../../data/portfolioData.json';
+import { TechLogo } from '../TechLogo';
 
 export const PinnedHorizontalProjects: React.FC = () => {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -37,8 +38,12 @@ export const PinnedHorizontalProjects: React.FC = () => {
       style={{ position: 'relative' }}
       className={`w-full ${
         isMobile ? 'h-auto py-16' : 'h-[380vh]'
-      } bg-[#0b0c0e] border-t border-white/[0.08]`}
+      } bg-[#07080a] border-t border-white/[0.08] overflow-hidden`}
     >
+      {/* Background Wireframe Arcs */}
+      <div className="absolute top-1/4 -right-48 w-[700px] h-[700px] wireframe-circle opacity-10 pointer-events-none" />
+      <div className="absolute bottom-10 -left-48 w-[600px] h-[600px] wireframe-circle opacity-10 pointer-events-none" />
+
       {/* Sticky Viewport Container on Desktop, Normal Flow on Mobile */}
       <div
         style={
@@ -52,29 +57,33 @@ export const PinnedHorizontalProjects: React.FC = () => {
             : 'overflow-hidden flex flex-col justify-between pt-20 pb-6'
         } max-w-[1400px] mx-auto px-4 md:px-8`}
       >
-        {/* Section Header */}
-        <div className="w-full flex flex-col md:flex-row md:items-end justify-between mb-4 pb-4 border-b border-white/[0.08]">
-          <div>
-            <div className="inline-flex items-center gap-2 mb-1.5 font-mono text-xs text-white/70">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-              <span>SELECTED_ARCHITECTURE_SHOWCASE</span>
+        {/* Section Header with Behance Signature Orb (Slice 6 style) */}
+        <div className="w-full flex flex-col md:flex-row md:items-end justify-between mb-4 pb-4 border-b border-white/[0.08] gap-4">
+          <div className="flex items-center gap-4">
+            <div className="section-orb !w-16 !h-16 shrink-0 text-[10px]">
+              <span>PROJECTS</span>
             </div>
-            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-white font-display">
-              Featured Systems.
-            </h2>
+            <div>
+              <div className="mb-1 font-mono text-xs text-white/50">
+                <span>PROJECTS</span>
+              </div>
+              <h2 className="text-2xl md:text-4xl font-black tracking-tight text-white font-display">
+                Featured Systems.
+              </h2>
+            </div>
           </div>
 
-          <div className="mt-3 md:mt-0 flex flex-wrap items-center gap-3 text-xs font-mono text-[#a1a4a5]">
+          <div className="mt-3 md:mt-0 flex flex-wrap items-center gap-3 text-xs font-mono">
             <Link
               to="/projects"
-              className="resend-btn-ghost !text-xs !py-1 !px-2.5 font-mono text-white hover:!border-white group"
+              className="px-4 py-2 rounded-full border border-white/20 bg-white/[0.05] hover:bg-white hover:text-black font-mono text-xs text-white transition-all inline-flex items-center gap-1.5 cursor-pointer"
             >
               <span>VIEW FULL CATALOG (6+)</span>
-              <span className="text-[#0A84FF] group-hover:translate-x-0.5 transition-transform">&rarr;</span>
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
-            <div className="flex items-center gap-1.5 px-3 py-1 rounded-[6px] border border-[#292d30] text-[#f0f0f0]">
-              <Cpu className="w-3.5 h-3.5 text-[#3ad389]" />
-              <span>4 PRODUCTION CASE STUDIES</span>
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 text-white/70 bg-white/[0.02]">
+              <Cpu className="w-3.5 h-3.5 text-white/80" />
+              <span>4 PRODUCTION SYSTEMS</span>
             </div>
           </div>
         </div>
@@ -109,14 +118,11 @@ export const PinnedHorizontalProjects: React.FC = () => {
         {/* Scrollytelling Progress Bar Indicator at bottom (Desktop only) */}
         {!isMobile && (
           <div className="pt-3 border-t border-[#292d30] flex items-center justify-between text-xs font-mono text-[#6e727a]">
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#0A84FF]" />
-              <span>SCROLL TO ADVANCE // SYSTEM 01 &rarr; 04</span>
-            </span>
+            <span>SCROLL TO ADVANCE • SYSTEM 01 &rarr; 04</span>
             <div className="w-56 h-1.5 bg-[#292d30] rounded-full overflow-hidden">
               <motion.div
                 style={{ scaleX: progressScaleX, transformOrigin: 'left' }}
-                className="h-full bg-gradient-to-r from-[#0A84FF] to-[#3b9eff]"
+                className="h-full bg-white/40"
               />
             </div>
             <span>HORIZONTAL TRACK ACTIVE</span>
@@ -158,8 +164,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           </span>
         </div>
 
-        <div className="flex items-center gap-1.5 text-xs font-mono text-white/60">
-          <span className="w-2 h-2 rounded-full bg-emerald-400" />
+        <div className="text-xs font-mono text-white/60">
           <span>PRODUCTION READY</span>
         </div>
       </div>
@@ -194,8 +199,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           {/* Tech Stack Badges */}
           <div className="flex flex-wrap gap-1.5 mb-4">
             {project.tags.map((t) => (
-              <span key={t} className="resend-badge text-[11px] py-0.5 px-2">
-                {t}
+              <span key={t} className="resend-badge text-[11px] py-0.5 px-2 inline-flex items-center gap-1.5">
+                <TechLogo name={t} className="w-3 h-3" />
+                <span>{t}</span>
               </span>
             ))}
           </div>
@@ -232,11 +238,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           <div className="code-window overflow-hidden border border-[#292d30] rounded-[10px] bg-[#050505]">
             {/* Window Header */}
             <div className="flex items-center justify-between px-3 py-1.5 border-b border-[#292d30] bg-[#080808]">
-              <div className="flex items-center gap-1.5">
-                <div className="w-2 h-2 rounded-full bg-[#292d30]" />
-                <div className="w-2 h-2 rounded-full bg-[#292d30]" />
-                <div className="w-2 h-2 rounded-full bg-[#292d30]" />
-              </div>
+              <span className="text-[10px] font-mono text-white/40 tracking-wider">SOURCE_LOG</span>
               <div className="flex items-center gap-1.5 text-[10px] font-mono text-[#6e727a]">
                 <Code2 className="w-3 h-3 text-[#0A84FF]" />
                 <span>inference-telemetry.log</span>

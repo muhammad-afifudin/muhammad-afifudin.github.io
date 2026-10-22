@@ -26,42 +26,42 @@ export const ResendCube3D: React.FC = () => {
         <div
           className="absolute inset-0 border border-[#292d30] bg-[#000000]/80 backdrop-blur-xs flex items-center justify-center [transform:translateZ(72px)] md:[transform:translateZ(88px)]"
         >
-          <div className="w-2 h-2 rounded-full bg-[#0A84FF]/60" />
+          <span className="font-mono text-[10px] text-white/30">+</span>
         </div>
 
         {/* Back Face */}
         <div
           className="absolute inset-0 border border-[#292d30] bg-[#000000]/80 backdrop-blur-xs flex items-center justify-center [transform:rotateY(180deg)_translateZ(72px)] md:[transform:rotateY(180deg)_translateZ(88px)]"
         >
-          <div className="w-2 h-2 rounded-full bg-[#292d30]" />
+          <span className="font-mono text-[10px] text-white/20">+</span>
         </div>
 
         {/* Left Face */}
         <div
           className="absolute inset-0 border border-[#292d30] bg-[#000000]/80 backdrop-blur-xs flex items-center justify-center [transform:rotateY(-90deg)_translateZ(72px)] md:[transform:rotateY(-90deg)_translateZ(88px)]"
         >
-          <div className="w-1.5 h-1.5 rounded-full bg-[#3b9eff]/50" />
+          <span className="font-mono text-[10px] text-white/20">+</span>
         </div>
 
         {/* Right Face */}
         <div
           className="absolute inset-0 border border-[#292d30] bg-[#000000]/80 backdrop-blur-xs flex items-center justify-center [transform:rotateY(90deg)_translateZ(72px)] md:[transform:rotateY(90deg)_translateZ(88px)]"
         >
-          <div className="w-1.5 h-1.5 rounded-full bg-[#3ad389]/50" />
+          <span className="font-mono text-[10px] text-white/20">+</span>
         </div>
 
         {/* Top Face */}
         <div
           className="absolute inset-0 border border-[#292d30] bg-[#000000]/80 backdrop-blur-xs flex items-center justify-center [transform:rotateX(90deg)_translateZ(72px)] md:[transform:rotateX(90deg)_translateZ(88px)]"
         >
-          <div className="w-8 h-8 rounded-full border border-[#292d30]/60" />
+          <div className="w-8 h-8 border border-[#292d30]/60" />
         </div>
 
         {/* Bottom Face */}
         <div
           className="absolute inset-0 border border-[#292d30] bg-[#000000]/80 backdrop-blur-xs flex items-center justify-center [transform:rotateX(-90deg)_translateZ(72px)] md:[transform:rotateX(-90deg)_translateZ(88px)]"
         >
-          <div className="w-8 h-8 rounded-full border border-[#292d30]/60" />
+          <div className="w-8 h-8 border border-[#292d30]/60" />
         </div>
       </motion.div>
     </div>

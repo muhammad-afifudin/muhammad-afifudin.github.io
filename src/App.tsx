@@ -1,11 +1,14 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Certificates from './pages/Certificates';
 import Contact from './pages/Contact';
+import About from './pages/About';
+import Skills from './pages/Skills';
+import Experience from './pages/Experience';
 
 // Restrained, sleek page transition without transform containing-block interference
 const PageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -15,7 +18,7 @@ const PageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.2, ease: 'easeOut' }}
-      className="w-full flex-grow flex flex-col justify-start bg-[#000000]"
+      className="w-full flex-grow flex flex-col justify-start bg-[#07080a]"
     >
       {children}
     </motion.div>
@@ -41,6 +44,22 @@ const AnimatedRoutes = () => {
 
         {/* Dedicated Pages */}
         <Route
+          path="/about"
+          element={
+            <PageWrapper>
+              <About />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/skills"
+          element={
+            <PageWrapper>
+              <Skills />
+            </PageWrapper>
+          }
+        />
+        <Route
           path="/projects"
           element={
             <PageWrapper>
@@ -57,6 +76,14 @@ const AnimatedRoutes = () => {
           }
         />
         <Route
+          path="/experience"
+          element={
+            <PageWrapper>
+              <Experience />
+            </PageWrapper>
+          }
+        />
+        <Route
           path="/contact"
           element={
             <PageWrapper>
@@ -64,11 +91,6 @@ const AnimatedRoutes = () => {
             </PageWrapper>
           }
         />
-
-        {/* Legacy route redirects to sections on main page */}
-        <Route path="/about" element={<Navigate to="/#about" replace />} />
-        <Route path="/skills" element={<Navigate to="/#skills" replace />} />
-        <Route path="/experience" element={<Navigate to="/#experience" replace />} />
 
         {/* 404 Fallback */}
         <Route

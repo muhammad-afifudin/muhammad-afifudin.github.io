@@ -3,8 +3,9 @@ import { useLocation } from 'react-router-dom';
 import { HeroSection } from '../components/scrollytelling/HeroSection';
 import { AboutSection } from '../components/scrollytelling/AboutSection';
 import { SkillsSection } from '../components/scrollytelling/SkillsSection';
-import { PinnedHorizontalProjects } from '../components/scrollytelling/PinnedHorizontalProjects';
 import { TimelineExperience } from '../components/scrollytelling/TimelineExperience';
+import { PinnedHorizontalProjects } from '../components/scrollytelling/PinnedHorizontalProjects';
+import { CertificatesSection } from '../components/scrollytelling/CertificatesSection';
 import { ContactTerminal } from '../components/scrollytelling/ContactTerminal';
 
 const Home: React.FC = () => {
@@ -28,23 +29,26 @@ const Home: React.FC = () => {
   }, [location]);
 
   return (
-    <div className="w-full bg-[#0b0c0e] text-[#f1f5f9]">
-      {/* 1. HOME: Hero Section with 3D Cube & Scroll Indicator (#home) */}
+    <div className="w-full bg-[#07080a] text-[#f1f5f9] behance-mesh-bg">
+      {/* 1. HERO: Showcase with Framed Portrait & Social Dock (#home) */}
       <HeroSection />
 
-      {/* 2. ABOUT: Journey, Philosophy, and Academic Background (#about) */}
+      {/* 2. ABOUT: Profile, Specs & Stat Cards (#about) */}
       <AboutSection />
 
-      {/* 3. SKILLS: Technical Capability Matrix (#skills) */}
+      {/* 3. SKILLS: Orbital Radar Diagram & Dev Tools Strip (#skills) */}
       <SkillsSection />
 
-      {/* 4. FEATURED PROJECTS: Pinned Horizontal Showcase (with link to /projects) */}
-      <PinnedHorizontalProjects />
+      {/* 4. CERTIFICATES: Accredited Credentials (#certificates-section) */}
+      <CertificatesSection />
 
-      {/* 5. EXPERIENCE: Timeline with Dynamic Scroll Line (#experience) */}
+      {/* 5. EXPERIENCE: Milestone Timeline (#experience) */}
       <TimelineExperience />
 
-      {/* 6. CONTACT CTA: Terminal Coordinates Bridge */}
+      {/* 6. PROJECTS: Featured Systems Showcase (#featured-projects) */}
+      <PinnedHorizontalProjects />
+
+      {/* 7. CONTACT: Direct Dispatch Form & Coordinates (#contact-section) */}
       <ContactTerminal />
     </div>
   );

@@ -1,92 +1,100 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar, Building, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import portfolioData from '../data/portfolioData.json';
+import { TechLogo } from '../components/TechLogo';
 
 const Experience: React.FC = () => {
-  const { experience } = portfolioData;
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -30 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { type: 'spring', stiffness: 80, damping: 12 }
-    }
-  };
+  const { experiences } = portfolioData;
 
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-      className="container mx-auto px-4 py-12"
-    >
-      {/* Title */}
-      <motion.div variants={itemVariants} className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 dark:text-white mb-2">
-          Work <span className="text-gradient">Experience</span>
-        </h2>
-        <p className="text-slate-500 dark:text-slate-400 max-w-xl mx-auto">
-          A history of my professional internships and engineering activities.
-        </p>
-      </motion.div>
+    <div className="min-h-screen bg-[#07080a] text-[#f1f5f9] py-16 px-4 sm:px-6 lg:px-12 overflow-hidden relative">
+      {/* Background Wireframe Hairlines */}
+      <div className="absolute top-1/4 -right-36 w-[600px] h-[600px] wireframe-circle opacity-15 pointer-events-none" />
+      <div className="absolute bottom-10 -left-36 w-[500px] h-[500px] wireframe-circle opacity-10 pointer-events-none" />
 
-      {/* Timeline Wrapper */}
-      <div className="max-w-3xl mx-auto relative pl-6 md:pl-10 border-l border-slate-200 dark:border-slate-800 flex flex-col gap-12">
-        {experience.map((exp, idx) => (
-          <motion.div
-            key={idx}
-            variants={itemVariants}
-            className="relative group timeline-item"
-          >
-            {/* Custom timeline bullet logo */}
-            <div className="absolute -left-[30px] md:-left-[42px] top-4 p-1.5 bg-white dark:bg-slate-900 rounded-full border border-slate-200 dark:border-slate-800 text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300 shadow-sm z-10">
-              <Briefcase className="w-4 h-4 md:w-5 h-5" />
+      <div className="max-w-[1200px] mx-auto relative z-10">
+        
+        {/* Header with Behance Signature Orb */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-white/[0.08] gap-6">
+          <div className="flex items-center gap-5">
+            <div className="section-orb shrink-0">
+              <span>CAREER</span>
             </div>
+            <div>
+              <div className="mb-2 font-mono text-xs text-white/50 tracking-widest uppercase">
+                <span>CAREER</span>
+              </div>
+              <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white font-display">
+                Work Experience.
+              </h1>
+            </div>
+          </div>
 
-            <div className="glass-panel p-6 rounded-2xl transition-all duration-300">
-              {/* Header Info */}
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 mb-4">
+          <div className="font-mono text-xs text-white/50">
+            <span>INTERNSHIPS & PRODUCTION ROLES</span>
+          </div>
+        </div>
+
+        {/* Timeline Cards Container */}
+        <div className="space-y-8">
+          {experiences.map((exp: any, idx: number) => (
+            <motion.div
+              key={exp.id || idx}
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="p-8 rounded-3xl bg-[#111317] border border-white/10 hover:border-white/25 transition-all shadow-xl"
+            >
+              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4 mb-6">
                 <div>
-                  <h3 className="text-lg md:text-xl font-bold text-slate-850 dark:text-white leading-tight">
+                  <span className="text-xs font-mono text-white/80 uppercase tracking-wider block mb-1">
+                    {exp.type || 'Professional Role'}
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white font-display">
                     {exp.role}
                   </h3>
-                  
-                  <div className="flex items-center gap-1.5 text-sm text-slate-550 dark:text-slate-405 mt-1">
-                    <Building className="w-4 h-4 text-emerald-500" />
-                    <span>{exp.company}</span>
+                  <div className="text-sm text-white/60 font-mono mt-1 flex items-center gap-2">
+                    <span className="text-white font-medium">{exp.company}</span>
+                    <span className="text-white/20">/</span>
+                    <span>{exp.location}</span>
                   </div>
                 </div>
 
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs font-semibold text-slate-600 dark:text-slate-350 self-start md:self-center">
-                  <Calendar className="w-3.5 h-3.5" />
-                  <span>{exp.period}</span>
+                <div className="px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs font-mono text-white/70">
+                  {exp.period}
                 </div>
               </div>
 
-              {/* Bullet Points */}
-              <ul className="flex flex-col gap-2.5 text-slate-600 dark:text-slate-400">
-                {exp.bullets.map((bullet, bIdx) => (
-                  <li key={bIdx} className="flex items-start gap-2.5 text-sm md:text-base leading-relaxed">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-1" />
-                    <span>{bullet}</span>
-                  </li>
+              {/* Highlights */}
+              <div className="space-y-2.5 mb-6">
+                {exp.highlights.map((item: string, hIdx: number) => (
+                  <div key={hIdx} className="flex items-start gap-3 text-xs sm:text-sm text-white/65 leading-relaxed">
+                    <CheckCircle2 className="w-4 h-4 text-white/80 shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </div>
                 ))}
-              </ul>
-            </div>
-          </motion.div>
-        ))}
+              </div>
+
+              {/* Tech Badges */}
+              <div className="pt-4 border-t border-white/10 flex flex-wrap items-center gap-2">
+                <span className="text-xs font-mono text-white/40 mr-1">Technologies:</span>
+                {exp.tech.map((t: string) => (
+                  <span
+                    key={t}
+                    className="font-mono text-[10px] px-2.5 py-1 rounded-full bg-white/[0.04] border border-white/10 text-white/80 inline-flex items-center gap-1.5"
+                  >
+                    <TechLogo name={t} className="w-3 h-3" />
+                    <span>{t}</span>
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
       </div>
-    </motion.div>
+    </div>
   );
 };
 

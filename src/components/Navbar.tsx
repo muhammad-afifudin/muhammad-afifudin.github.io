@@ -13,10 +13,10 @@ export const NAV_ITEMS: NavItem[] = [
   { name: 'HOME', type: 'section', target: 'home' },
   { name: 'ABOUT', type: 'section', target: 'about' },
   { name: 'SKILLS', type: 'section', target: 'skills' },
+  { name: 'CERTIFICATES', type: 'section', target: 'certificates-section' },
   { name: 'EXPERIENCE', type: 'section', target: 'experience' },
-  { name: 'PROJECTS', type: 'route', target: '/projects' },
-  { name: 'CERTIFICATES', type: 'route', target: '/certificates' },
-  { name: 'CONTACT', type: 'route', target: '/contact' },
+  { name: 'PROJECTS', type: 'section', target: 'featured-projects' },
+  { name: 'CONTACT', type: 'section', target: 'contact-section' },
 ];
 
 const Navbar: React.FC = () => {
@@ -42,7 +42,7 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     if (!isHomePage) return;
 
-    const sectionIds = ['home', 'about', 'skills', 'experience'];
+    const sectionIds = ['home', 'about', 'skills', 'certificates-section', 'experience', 'featured-projects', 'contact-section'];
     const observers: IntersectionObserver[] = [];
 
     sectionIds.forEach((id) => {
@@ -102,15 +102,13 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isHomePage && !isScrolled
-          ? 'opacity-0 -translate-y-4 pointer-events-none'
-          : 'opacity-100 translate-y-0 pointer-events-auto'
-      }`}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <div className="max-w-[1360px] mx-auto px-4 sm:px-6 pt-3 pb-2">
-        <div className="rounded-full bg-[#14161a]/85 backdrop-blur-2xl border border-white/10 px-5 sm:px-7 py-2.5 sm:py-3 flex items-center justify-between shadow-[0_10px_35px_rgba(0,0,0,0.6)]">
+        <div className={`rounded-full backdrop-blur-2xl px-5 sm:px-7 py-2.5 sm:py-3 flex items-center justify-between transition-all duration-300 ${
+          isScrolled 
+            ? 'bg-[#101216]/95 border border-white/15 shadow-[0_16px_40px_rgba(0,0,0,0.85)]' 
+            : 'bg-[#14161a]/85 border border-white/10 shadow-[0_10px_35px_rgba(0,0,0,0.6)]'
+        }`}>
           {/* Logo */}
           <Link
             to="/"
@@ -123,7 +121,7 @@ const Navbar: React.FC = () => {
             }}
             className="flex items-center gap-2 group cursor-pointer"
           >
-            <span className="font-bold text-xs sm:text-sm uppercase tracking-[0.22em] text-white group-hover:text-white/80 transition-colors">
+            <span className="font-bold text-xs sm:text-sm uppercase tracking-[0.25em] text-white group-hover:text-white/80 transition-colors">
               AFIFUDIN
             </span>
           </Link>

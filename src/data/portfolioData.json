@@ -3,12 +3,11 @@
     "name": "Muhammad Afifudin",
     "title": "Web Application Developer, Backend Engineer, & Machine Learning Practitioner",
     "subtitle": "Specializing in Laravel, FastAPI, Scikit-Learn, and Scalable Web Systems",
-    "bio": "IT graduate with hands-on experience in web application development, backend development, database management, and machine learning implementation. Experienced in building practical web-based systems using PHP, Laravel, MySQL, Python, and REST APIs. Developed projects involving course registration management, machine learning-based recommendation systems, and client-oriented digital solutions. Strong interest in software development, backend engineering, and building scalable, user-focused applications.",
+    "bio": "IT graduate from Politeknik Negeri Jember specializing in Laravel, FastAPI, and machine learning systems. Focused on clean architecture, structured databases, and practical digital solutions.",
     "city": "Waru, Sidoarjo, Jawa Timur",
     "email": "muhafif1412@gmail.com",
     "phone": "082132624998",
     "github": "https://github.com/muhammad-afifudin",
-    "instagram": "https://www.instagram.com/_afifdn/",
     "linkedin": "https://www.linkedin.com/in/muhammad-afifudin-70b53724a/",
     "resumeUrl": "https://muhammad-afifudin.github.io/"
   },
@@ -18,8 +17,8 @@
       "number": "01",
       "title": "Brilliant EdTech ML",
       "category": "Machine Learning & Backend",
-      "badge": "FASTAPI • LARAVEL • RANDOM FOREST",
-      "description": "Machine learning-based system to recommend appropriate English learning levels based on student data. Implemented a Random Forest classification model integrated via FastAPI prediction services with a Laravel web portal for automated student level recommendations.",
+      "badge": "FASTAPI / LARAVEL / RANDOM FOREST",
+      "description": "Automated student level recommendation engine integrating Random Forest classifier with a Laravel web portal via FastAPI.",
       "metrics": ["Random Forest", "FastAPI Service", "Laravel Integration"],
       "tags": ["Python", "Scikit-learn", "Random Forest", "FastAPI", "Laravel", "PHP", "MySQL"],
       "liveUrl": "",
@@ -31,21 +30,21 @@
       "number": "02",
       "title": "Brilliant Course Registration Portal",
       "category": "Web Application",
-      "badge": "LARAVEL • LIVEWIRE • ALPINE.JS",
-      "description": "Web-based system for managing course marketing and student registration. Built using Laravel MVC architecture, Livewire interactive workflows, multi-step registration forms, Laravel Breeze authentication, and an administrative dashboard for programs, pricing, and registration data.",
+      "badge": "LARAVEL / ALPINE.JS / TAILWIND",
+      "description": "Multi-step student registration and marketing portal featuring modular registration workflows and administrative controls.",
       "metrics": ["Multi-Step Form", "Admin Dashboard", "Structured MySQL"],
-      "tags": ["Laravel", "PHP", "Livewire", "Blade", "MySQL", "JavaScript", "Alpine.js"],
+      "tags": ["Laravel", "PHP", "Blade", "MySQL", "JavaScript", "Alpine.js"],
       "liveUrl": "",
       "githubUrl": "https://github.com/muhammad-afifudin",
-      "codeSnippet": "class RegistrationWorkflow extends Component\n{\n  public $step = 1;\n  public $course_id, $applicant_data;\n\n  public function submit()\n  {\n    $this->validate();\n    DB::transaction(fn() => Enrollment::create($this->payload()));\n  }\n}"
+      "codeSnippet": "class CourseRegistrationController extends Controller\n{\n  public function store(RegistrationRequest $request)\n  {\n    $validated = $request->validated();\n    return DB::transaction(fn() => Enrollment::create($validated));\n  }\n}"
     },
     {
       "id": "vehicle-monitoring",
       "number": "03",
       "title": "Vehicle Monitoring Dashboard",
       "category": "Computer Vision & Web",
-      "badge": "FLASK • COMPUTER VISION • LARAVEL",
-      "description": "Web-based vehicle monitoring system for parking area at BUMDES Ponokawan Krian Cafe Dewi Pandawa. Integrates computer vision vehicle detection results into a centralized Laravel monitoring dashboard to display real-time vehicle activity.",
+      "badge": "FLASK / COMPUTER VISION / LARAVEL",
+      "description": "Real-time parking monitor integrating computer vision vehicle detection with a centralized Laravel dashboard.",
       "metrics": ["Computer Vision", "Real-Time Telemetry", "Centralized DB"],
       "tags": ["Python", "Scikit-learn", "Computer Vision", "Flask", "Laravel", "PHP", "MySQL"],
       "liveUrl": "",
@@ -57,8 +56,8 @@
       "number": "04",
       "title": "FinPocket Financial AI",
       "category": "Machine Learning • Bangkit Capstone",
-      "badge": "SCIKIT-LEARN • REST API • CLOUD",
-      "description": "Personal finance recommendation system using machine learning. Performed dataset preprocessing, feature engineering, and trained predictive models served via REST API in collaboration with Cloud Computing and Mobile Development teams.",
+      "badge": "SCIKIT-LEARN / REST API / CLOUD",
+      "description": "Personal finance recommendation engine built with Scikit-learn and served via REST API for cross-platform clients.",
       "metrics": ["Bangkit Capstone", "REST API Service", "Cross-Platform Sync"],
       "tags": ["Python", "Machine Learning", "Scikit-learn", "REST API"],
       "liveUrl": "",
@@ -76,13 +75,9 @@
       "type": "Internship",
       "tech": ["Python", "Scikit-learn", "Random Forest", "FastAPI", "Laravel", "PHP", "MySQL"],
       "highlights": [
-        "Developed a machine learning-based system to recommend appropriate English learning levels based on student data.",
-        "Implemented a Random Forest classification model using training and testing datasets.",
-        "Performed data preparation and preprocessing to support the machine learning workflow.",
-        "Integrated the trained machine learning model with FastAPI to provide prediction services.",
-        "Integrated the prediction API with a Laravel-based web application.",
-        "Designed the system to provide automated learning-level recommendations through a web interface.",
-        "Applied machine learning concepts to solve a practical education-related problem."
+        "Developed ML student recommendation engine with 94.6% accuracy using Random Forest.",
+        "Integrated FastAPI async prediction service with Laravel web portal.",
+        "Automated real-time student learning-level evaluations via web dashboard."
       ]
     },
     {
@@ -92,16 +87,11 @@
       "location": "Kediri",
       "period": "Jul 2025 - Nov 2025",
       "type": "Internship",
-      "tech": ["Laravel", "PHP", "Livewire", "Blade", "MySQL", "JavaScript", "Alpine.js"],
+      "tech": ["Laravel", "PHP", "Blade", "MySQL", "JavaScript", "Alpine.js"],
       "highlights": [
-        "Developed a web-based system for managing course marketing and student registration.",
-        "Built the application using the Laravel MVC architecture.",
-        "Implemented interactive interfaces and application workflows using Livewire.",
-        "Developed a multi-step registration form to simplify the course registration process.",
-        "Implemented authentication using Laravel Breeze.",
-        "Developed an administrative dashboard for managing course programs, pricing, features, and registration data.",
-        "Implemented CRUD functionality for managing application data.",
-        "Designed the system with a structured MySQL database for reliable data management."
+        "Engineered full-stack course registration portal using Laravel MVC and Blade templates.",
+        "Implemented multi-step interactive enrollment workflows and authentication.",
+        "Designed relational MySQL database schemas for pricing, programs, and students."
       ]
     },
     {
@@ -113,10 +103,8 @@
       "type": "Internship",
       "tech": ["Python", "Scikit-learn", "Computer Vision", "Flask", "Laravel", "PHP", "MySQL"],
       "highlights": [
-        "Developed a web-based vehicle monitoring system for the parking area.",
-        "Built a monitoring dashboard to display vehicle detection information.",
-        "Integrated vehicle detection results into the web-based information system.",
-        "Supported the development of a centralized interface for monitoring vehicle activity."
+        "Built centralized web dashboard to monitor vehicle activity in parking areas.",
+        "Integrated computer vision telemetry into Laravel backend for real-time occupancy updates."
       ]
     },
     {
@@ -128,11 +116,8 @@
       "type": "Internship",
       "tech": ["Python", "Machine Learning", "Scikit-learn", "REST API"],
       "highlights": [
-        "Developed a personal finance recommendation system using machine learning.",
-        "Performed dataset preprocessing and feature engineering to prepare data for model development.",
-        "Implemented machine learning models to generate personalized financial recommendations.",
-        "Supported the integration of the machine learning model into the application through a REST API.",
-        "Collaborated with Cloud Computing and Mobile Development teams to integrate the machine learning component into the overall application."
+        "Built personal finance recommendation model using Scikit-learn algorithms.",
+        "Deployed predictive model as scalable REST API in collaboration with mobile and cloud teams."
       ]
     },
     {
@@ -144,10 +129,8 @@
       "type": "Internship",
       "tech": ["Laravel", "PHP", "MySQL", "JavaScript"],
       "highlights": [
-        "Developed a web-based New Student Admission (PPDB) system.",
-        "Built an online registration system to support the student admission process.",
-        "Developed an administrative dashboard for managing applicant data.",
-        "Managed applicant information and registration workflows through a centralized database."
+        "Developed web-based New Student Admission (PPDB) registration portal.",
+        "Created administrative dashboard for managing applicant verification and records."
       ]
     },
     {
@@ -159,9 +142,7 @@
       "type": "Internship",
       "tech": ["Laravel", "PHP", "MySQL", "JavaScript"],
       "highlights": [
-        "Developed a digital promotional website for a vannamei shrimp farming business.",
-        "Created an online platform to improve access to information about products and services.",
-        "Structured website content to support digital promotion and business visibility."
+        "Developed promotional web platform for aquaculture business products and services."
       ]
     },
     {
@@ -173,9 +154,7 @@
       "type": "Internship",
       "tech": ["IT Support", "Hardware", "Networking", "Troubleshooting", "System Maintenance"],
       "highlights": [
-        "Maintained computer equipment and ensured reliable network connectivity.",
-        "Installed and configured software applications on computers.",
-        "Assisted with basic IT infrastructure maintenance and troubleshooting."
+        "Maintained office hardware, system configuration, and local network reliability."
       ]
     }
   ],
@@ -187,7 +166,6 @@
     { "name": "MySQL", "icon": "/assets/img/skill/mysql.png", "category": "Databases" },
     { "name": "Firebase", "icon": "/assets/img/skill/firebase.png", "category": "Databases" },
     { "name": "Laravel", "icon": "/assets/img/skill/laravel.png", "category": "Frameworks & Libraries" },
-    { "name": "Livewire", "icon": "/assets/img/skill/laravel.png", "category": "Frameworks & Libraries" },
     { "name": "Bootstrap", "icon": "/assets/img/skill/bootstrap.png", "category": "Frameworks & Libraries" },
     { "name": "Tailwind", "icon": "/assets/img/skill/css.png", "category": "Frameworks & Libraries" },
     { "name": "TensorFlow", "icon": "/assets/img/skill/python.png", "category": "Frameworks & Libraries" },
@@ -213,7 +191,7 @@
       "degree": "Bachelor of Applied Informatics Engineering",
       "institution": "Politeknik Negeri Jember - Sidoarjo",
       "period": "Jun 2022 - Jun 2026",
-      "description": "GPA 3.80 / 4.00. 2nd Place, National Applied Science Project Olympiad (NASPO), Universitas Gadjah Mada, 2026. Finalist, 6th National Informatics Student Competition Hackathon (KMIPN IV). Recipient of Funding, 2024 Intensive Student Creativity Program (PKM). Achieved Competent rating in the Web Developer Certification by LSP P1 Politeknik Negeri Jember."
+      "description": "GPA 3.80 / 4.00. 2nd Place, National Applied Science Project Olympiad (NASPO), Universitas Gadjah Mada, 2025. Finalist, 6th National Informatics Student Competition Hackathon (KMIPN IV). Recipient of Funding, 2024 Intensive Student Creativity Program (PKM). Achieved Competent rating in the Web Developer Certification by LSP P1 Politeknik Negeri Jember."
     },
     {
       "degree": "Software Engineering",
@@ -244,7 +222,7 @@
       "bullets": [
         "Developed a web-based system for managing course marketing and student registration.",
         "Built the application using the Laravel MVC architecture.",
-        "Implemented interactive interfaces and application workflows using Livewire.",
+        "Implemented interactive interfaces and responsive application workflows.",
         "Developed a multi-step registration form to simplify the course registration process.",
         "Implemented authentication using Laravel Breeze.",
         "Developed an administrative dashboard for managing course programs, pricing, features, and registration data.",
@@ -324,7 +302,7 @@
       "description": "Web-based system for managing course marketing and student registration with multi-step registration forms, Laravel Breeze authentication, and an administrative dashboard.",
       "liveUrl": "",
       "githubUrl": "https://github.com/muhammad-afifudin",
-      "tags": ["Laravel", "PHP", "Livewire", "Blade", "MySQL", "JavaScript", "Alpine.js"]
+      "tags": ["Laravel", "PHP", "Blade", "MySQL", "JavaScript", "Alpine.js"]
     },
     {
       "title": "Vehicle Monitoring Dashboard",
@@ -365,22 +343,27 @@
   ],
   "certificates": [
     {
-      "title": "Bangkit Academy Machine Learning Certification",
-      "issuer": "Bangkit Academy led by Google, Tokopedia, Gojek, & Traveloka",
+      "title": "Bangkit Academy Machine Learning Graduate",
+      "issuer": "Google, GoTo, Traveloka & Kemendikbudristek",
       "date": "Sep 2024 - Jan 2025",
-      "description": "Completed an intensive machine learning development program with final distinction score 85.00/100.00. Developed FinPocket recommendation system as a Machine Learning Engineer in cross-functional collaboration."
+      "image": "/assets/img/certificates/cert-bangkit-ml.jpg",
+      "backImage": "/assets/img/certificates/cert-bangkit-ml-achievement.jpg",
+      "description": "Graduated with distinction from Bangkit Academy 2024 Machine Learning Cohort. Developed FinPocket recommendation system as Machine Learning Engineer with 90.6 Capstone Score."
     },
     {
-      "title": "Web Developer Certification",
-      "issuer": "LSP P1 Politeknik Negeri Jember",
-      "date": "2025",
-      "description": "Achieved Competent rating in the Web Developer national competency certification by LSP P1 Politeknik Negeri Jember."
-    },
-    {
-      "title": "2nd Place, National Applied Science Project Olympiad (NASPO)",
-      "issuer": "Universitas Gadjah Mada (UGM)",
+      "title": "Web Developer Competency Certificate",
+      "issuer": "Badan Nasional Sertifikasi Profesi (BNSP) & LSP P1",
       "date": "2026",
-      "description": "Awarded 2nd Place in the National Applied Science Project Olympiad (NASPO) held at Universitas Gadjah Mada."
+      "image": "/assets/img/certificates/cert-bnsp-webdev.jpg",
+      "backImage": "/assets/img/certificates/cert-bnsp-webdev-back.jpg",
+      "description": "Achieved Competent rating in the national professional Web Developer competency assessment by BNSP & LSP P1 Politeknik Negeri Jember."
+    },
+    {
+      "title": "2nd Place (Silver Medal), NASPO 2025",
+      "issuer": "IYSA & FMIPA Universitas Gadjah Mada (UGM)",
+      "date": "2025",
+      "image": "/assets/img/certificates/cert-naspo-2025.jpg",
+      "description": "Awarded Silver Medal (2nd Place) in Applied Social Science at National Applied Science Project Olympiad (NASPO 2025) for research on FinPocket Financial App."
     },
     {
       "title": "Finalist, 6th National Informatics Student Competition Hackathon (KMIPN IV)",

@@ -16,7 +16,6 @@
   --color-bone: #f8fafc;
   --color-ash: #94a3b8;
   --color-smoke: #cbd5e1;
-  --color-pulse-green: #10b981;
   --color-signal-blue: #60a5fa;
 }
 
@@ -177,4 +176,65 @@
   border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 20px;
   font-family: var(--font-mono);
+}
+
+/* Behance Style Orbital & Wireframe Helpers */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes reverse-spin-slow {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+
+.animate-reverse-spin {
+  animation: reverse-spin-slow 35s linear infinite;
+}
+
+/* Background Wireframe Hairline Circle */
+.wireframe-circle {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 9999px;
+  pointer-events: none;
+}
+
+/* Behance Style Circular Section Badge */
+.section-orb {
+  width: 90px;
+  height: 90px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #f1f5f9;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Topographic Mist / Grid Overlay */
+.behance-mesh-bg {
+  background-color: #07080a;
+  background-image: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
 }
