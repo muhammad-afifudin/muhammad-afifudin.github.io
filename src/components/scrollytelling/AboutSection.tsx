@@ -11,7 +11,7 @@ export const AboutSection: React.FC = () => {
     { number: '4+', label: 'Featured Systems', desc: 'Production Deployments' },
     { number: '94.6%', label: 'Model Accuracy', desc: 'Random Forest Classifier' },
     { number: '10+', label: 'Core Tech Stack', desc: 'Laravel, FastAPI, Python' },
-    { number: '3.80', label: 'Academic GPA', desc: 'Scale 4.00 • Cum Laude' },
+    { number: '3.80', label: 'Academic GPA', desc: 'Scale 4.00, Cum Laude' },
     { number: '2nd', label: 'NASPO Honor', desc: 'National Applied Science' },
   ];
 
@@ -117,7 +117,7 @@ export const AboutSection: React.FC = () => {
                 {education.map((edu, idx) => (
                   <div key={idx} className="pb-3 border-b border-white/5 last:border-b-0 last:pb-0 space-y-1">
                     <h4 className="text-base font-bold text-white">{edu.degree}</h4>
-                    <div className="text-xs text-white/60 font-mono">{edu.institution} • {edu.period}</div>
+                    <div className="text-xs text-white/60 font-mono">{edu.institution}, {edu.period}</div>
                   </div>
                 ))}
               </div>

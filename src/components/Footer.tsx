@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
         {/* Bottom Coordinates Bar */}
         <div className="pt-8 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-6 font-mono text-xs text-white/50">
           <div>
-            <span className="text-white font-medium">MUHAMMAD AFIFUDIN</span> &copy; {new Date().getFullYear()} • SIDOARJO, INDONESIA
+            <span className="text-white font-medium">MUHAMMAD AFIFUDIN</span> &copy; {new Date().getFullYear()}, SIDOARJO, INDONESIA
           </div>
 
           <div className="flex items-center gap-5">

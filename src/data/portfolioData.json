@@ -13,56 +13,17 @@
   },
   "featuredProjects": [
     {
-      "id": "brilliant-edtech",
+      "id": "tempe-bangjae",
       "number": "01",
-      "title": "Brilliant EdTech ML",
-      "category": "Machine Learning & Backend",
-      "badge": "FASTAPI / LARAVEL / RANDOM FOREST",
-      "description": "Automated student level recommendation engine integrating Random Forest classifier with a Laravel web portal via FastAPI.",
-      "metrics": ["Random Forest", "FastAPI Service", "Laravel Integration"],
-      "tags": ["Python", "Scikit-learn", "Random Forest", "FastAPI", "Laravel", "PHP", "MySQL"],
-      "liveUrl": "",
+      "title": "Tempe Bang Jae - Artisan Tempe Waru",
+      "category": "Web Application & Digital Storefront",
+      "badge": "Modern Web E-Commerce",
+      "description": "Boutique digital storefront for Tempe Bang Jae artisan tempe producer in Waru, Sidoarjo.",
+      "metrics": ["Artisan E-Commerce", "Instant Cart and Wishlist", "Waru, Sidoarjo Local Brand"],
+      "tags": ["HTML", "CSS", "JavaScript", "Vercel"],
+      "liveUrl": "https://tempebangjae.vercel.app/",
       "githubUrl": "https://github.com/muhammad-afifudin",
-      "codeSnippet": "POST /api/v1/recommend-level\n{\n  \"student_id\": \"STD-2025-084\",\n  \"assessment_scores\": [88, 92, 79, 85],\n  \"learning_pace\": \"accelerated\"\n}\n// Response: { \"recommended_level\": \"Advanced-B2\", \"confidence\": 0.946 }"
-    },
-    {
-      "id": "brilliant-portal",
-      "number": "02",
-      "title": "Brilliant Course Registration Portal",
-      "category": "Web Application",
-      "badge": "LARAVEL / ALPINE.JS / TAILWIND",
-      "description": "Multi-step student registration and marketing portal featuring modular registration workflows and administrative controls.",
-      "metrics": ["Multi-Step Form", "Admin Dashboard", "Structured MySQL"],
-      "tags": ["Laravel", "PHP", "Blade", "MySQL", "JavaScript", "Alpine.js"],
-      "liveUrl": "",
-      "githubUrl": "https://github.com/muhammad-afifudin",
-      "codeSnippet": "class CourseRegistrationController extends Controller\n{\n  public function store(RegistrationRequest $request)\n  {\n    $validated = $request->validated();\n    return DB::transaction(fn() => Enrollment::create($validated));\n  }\n}"
-    },
-    {
-      "id": "vehicle-monitoring",
-      "number": "03",
-      "title": "Vehicle Monitoring Dashboard",
-      "category": "Computer Vision & Web",
-      "badge": "FLASK / COMPUTER VISION / LARAVEL",
-      "description": "Real-time parking monitor integrating computer vision vehicle detection with a centralized Laravel dashboard.",
-      "metrics": ["Computer Vision", "Real-Time Telemetry", "Centralized DB"],
-      "tags": ["Python", "Scikit-learn", "Computer Vision", "Flask", "Laravel", "PHP", "MySQL"],
-      "liveUrl": "",
-      "githubUrl": "https://github.com/muhammad-afifudin",
-      "codeSnippet": "STREAM /parking/camera-01 [ACTIVE]\n[INFO] CV Detection Engine: Vehicle Detected\n[INFO] Occupied: 24/30 slots | Free: 6 slots\n[SYNC] Sent telemetry payload to Laravel backend (HTTP 200 OK)"
-    },
-    {
-      "id": "finpocket",
-      "number": "04",
-      "title": "FinPocket Financial AI",
-      "category": "Machine Learning • Bangkit Capstone",
-      "badge": "SCIKIT-LEARN / REST API / CLOUD",
-      "description": "Personal finance recommendation engine built with Scikit-learn and served via REST API for cross-platform clients.",
-      "metrics": ["Bangkit Capstone", "REST API Service", "Cross-Platform Sync"],
-      "tags": ["Python", "Machine Learning", "Scikit-learn", "REST API"],
-      "liveUrl": "",
-      "githubUrl": "https://github.com/muhammad-afifudin",
-      "codeSnippet": "POST /v1/predictions/financial-plan\n{\n  \"monthly_income\": 7500000,\n  \"fixed_expenses\": 3200000,\n  \"financial_goal\": \"emergency_fund\"\n}\n// Response: { \"savings_allocation\": 0.28, \"risk_tolerance\": \"moderate\" }"
+      "codeSnippet": "const cart = new CartManager({\n  store: \"Tempe Bang Jae Waru\",\n  currency: \"IDR\",\n  autoSave: true\n});\n\ncart.addItem({\n  id: \"tempe-daun-pisang\",\n  name: \"Tempe Daun Pisang Tradisional\",\n  price: 8000,\n  qty: 2\n});\n\nconst invoice = cart.checkout({\n  customer: \"Pelanggan Waru & Surabaya\",\n  channel: \"Direct Order Gateway\"\n});"
     }
   ],
   "experiences": [
@@ -287,58 +248,13 @@
   ],
   "projects": [
     {
-      "title": "Brilliant EdTech ML",
-      "category": "Machine Learning",
-      "image": "/assets/img/portfolio/img-ppdb.png",
-      "description": "English learning level recommendation system using Random Forest classification model integrated via FastAPI prediction services with a Laravel web application.",
-      "liveUrl": "",
+      "title": "Tempe Bang Jae - Artisan Tempe Waru",
+      "category": "Web Application",
+      "image": "/assets/img/portfolio/tempe-bangjae.png",
+      "description": "Boutique digital storefront and ordering platform for Tempe Bang Jae, an authentic 36-hour natural fermentation artisan tempe producer in Waru, Sidoarjo. Featuring interactive product catalog, instant cart simulation, interactive wishlist, and order invoice checkout.",
+      "liveUrl": "https://tempebangjae.vercel.app/",
       "githubUrl": "https://github.com/muhammad-afifudin",
-      "tags": ["Python", "Scikit-learn", "Random Forest", "FastAPI", "Laravel", "MySQL"]
-    },
-    {
-      "title": "Brilliant Course Marketing & Registration Platform",
-      "category": "Web",
-      "image": "/assets/img/portfolio/img-pos.png",
-      "description": "Web-based system for managing course marketing and student registration with multi-step registration forms, Laravel Breeze authentication, and an administrative dashboard.",
-      "liveUrl": "",
-      "githubUrl": "https://github.com/muhammad-afifudin",
-      "tags": ["Laravel", "PHP", "Blade", "MySQL", "JavaScript", "Alpine.js"]
-    },
-    {
-      "title": "Vehicle Monitoring Dashboard",
-      "category": "Systems",
-      "image": "/assets/img/portfolio/img-kamera.png",
-      "description": "Web-based vehicle monitoring system for parking area at BUMDES Ponokawan Krian Cafe Dewi Pandawa with real-time detection telemetry and centralized dashboard.",
-      "liveUrl": "",
-      "githubUrl": "https://github.com/muhammad-afifudin",
-      "tags": ["Python", "Scikit-learn", "Computer Vision", "Flask", "Laravel", "MySQL"]
-    },
-    {
-      "title": "FinPocket Financial AI",
-      "category": "Machine Learning",
-      "image": "/assets/img/portfolio/img-keuangan-tambak.png",
-      "description": "Personal finance recommendation system using machine learning algorithms, dataset preprocessing, feature engineering, and REST API microservices (Bangkit Academy Capstone).",
-      "liveUrl": "",
-      "githubUrl": "https://github.com/muhammad-afifudin",
-      "tags": ["Python", "Machine Learning", "Scikit-learn", "REST API"]
-    },
-    {
-      "title": "PPDB SMP Muhammadiyah 1 Gresik",
-      "category": "Web",
-      "image": "/assets/img/portfolio/img-ppdb.png",
-      "description": "Web-based New Student Admission (PPDB) online registration system with applicant administration dashboard and centralized database workflows.",
-      "liveUrl": "",
-      "githubUrl": "https://github.com/muhammad-afifudin",
-      "tags": ["Laravel", "PHP", "MySQL", "JavaScript"]
-    },
-    {
-      "title": "Vannamei Shrimp Farm Promotional Website",
-      "category": "Web",
-      "image": "/assets/img/portfolio/img-tambak.png",
-      "description": "Digital promotional website and information platform for a vannamei shrimp farming business to improve digital visibility and access to product data.",
-      "liveUrl": "",
-      "githubUrl": "https://github.com/muhammad-afifudin",
-      "tags": ["Laravel", "PHP", "MySQL", "JavaScript"]
+      "tags": ["HTML", "CSS", "JavaScript", "Vercel"]
     }
   ],
   "certificates": [

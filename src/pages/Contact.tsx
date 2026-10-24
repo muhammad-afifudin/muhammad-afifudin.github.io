@@ -181,7 +181,7 @@ Sent via portfolio contact form`;
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
-                    <div className="text-white/40 text-[10px] tracking-wider uppercase">PHONE / WHATSAPP</div>
+                    <div className="text-white/40 text-[10px] tracking-wider uppercase">PHONE &amp; WHATSAPP</div>
                     <div className="text-white font-medium">{personalInfo.phone}</div>
                   </div>
                 </a>
@@ -310,7 +310,7 @@ Sent via portfolio contact form`;
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    placeholder="e.g. Backend Engineer Role / Project Consultation"
+                    placeholder="e.g. Backend Engineer Role or Project Consultation"
                     className="w-full px-4 py-3 bg-[#0a0c10] border border-white/10 rounded-xl text-xs font-mono text-white placeholder-white/30 focus:outline-none focus:border-white/40 transition-colors"
                   />
                 </div>

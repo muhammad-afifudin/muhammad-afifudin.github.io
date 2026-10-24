@@ -95,7 +95,7 @@ export const ContactTerminal: React.FC = () => {
               </div>
 
               <div>
-                <label className="block text-xs font-mono uppercase text-white/50 mb-1.5">Message / Project Inquiry</label>
+                <label className="block text-xs font-mono uppercase text-white/50 mb-1.5">Message or Project Inquiry</label>
                 <textarea
                   required
                   rows={4}
@@ -148,7 +148,7 @@ export const ContactTerminal: React.FC = () => {
             {/* Phone & WhatsApp Card */}
             <div className="p-6 rounded-2xl sm:rounded-3xl bg-[#111317] border border-white/10 flex flex-col justify-between group shadow-lg">
               <div className="flex items-center justify-between mb-3">
-                <span className="font-mono text-xs uppercase text-white/40">Phone / WhatsApp</span>
+                <span className="font-mono text-xs uppercase text-white/40">Phone or WhatsApp</span>
                 <button
                   onClick={() => copyToClipboard(personalInfo.phone, 'phone')}
                   className="text-xs font-mono text-white/70 hover:text-white flex items-center gap-1.5 p-1 px-2.5 rounded-full bg-white/5 border border-white/10 transition-colors cursor-pointer"

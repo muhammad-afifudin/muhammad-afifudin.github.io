@@ -142,7 +142,7 @@ const About: React.FC = () => {
               {education.map((edu, idx) => (
                 <div key={idx} className="pb-3 border-b border-white/5 last:border-b-0 last:pb-0">
                   <h4 className="text-sm font-bold text-white">{edu.degree}</h4>
-                  <div className="text-xs text-white/50 font-mono mt-0.5">{edu.institution} • {edu.period}</div>
+                  <div className="text-xs text-white/50 font-mono mt-0.5">{edu.institution}, {edu.period}</div>
                 </div>
               ))}
             </div>

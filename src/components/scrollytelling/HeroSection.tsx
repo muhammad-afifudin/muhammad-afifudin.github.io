@@ -5,7 +5,6 @@ import {
   ArrowUpRight, 
   Play, 
   Pause,
-  MoreVertical, 
   ChevronDown,
   X,
   Activity,
@@ -45,31 +44,13 @@ export const HeroSection: React.FC = () => {
 
   const featuredSystems = [
     {
-      id: 'brilliant-edtech',
-      title: 'Brilliant EdTech ML',
-      subtitle: 'FastAPI • Random Forest',
-      tag: '94.6% Acc',
+      id: 'tempe-bangjae',
+      title: 'Tempe Bang Jae',
+      subtitle: 'Artisan Tempe, E-Commerce',
+      tag: 'Live Prod',
       year: '2026',
-      image: '/assets/img/portfolio/img-ppdb.png',
-      badge: 'ML Engine'
-    },
-    {
-      id: 'brilliant-portal',
-      title: 'Course Portal System',
-      subtitle: 'Laravel • Blade • MySQL',
-      tag: 'Full Stack',
-      year: 'Prod',
-      image: '/assets/img/portfolio/img-sekaone.jpg',
-      badge: 'Full Stack'
-    },
-    {
-      id: 'vehicle-monitoring',
-      title: 'Vehicle CV Monitor',
-      subtitle: 'Computer Vision • Flask',
-      tag: 'Real-time',
-      year: 'Telemetry',
-      image: '/assets/img/portfolio/img-kamera.png',
-      badge: 'CV & IoT'
+      image: '/assets/img/portfolio/tempe-bangjae.png',
+      badge: 'E-Commerce'
     }
   ];
 
@@ -197,7 +178,7 @@ export const HeroSection: React.FC = () => {
                 className="flex items-center justify-between w-full max-w-sm mb-4 sm:mb-6 text-xs font-mono text-white/60 tracking-wider uppercase"
               >
                 <div className="border border-white/15 px-3 py-1 rounded-full bg-white/[0.04] text-[11px] font-medium tracking-wide text-white/80">
-                  <span>WEB &amp; AI ENGINEERING • 2026</span>
+                  <span>WEB &amp; AI ENGINEERING 2026</span>
                 </div>
                 <span className="text-white/40 font-mono text-[11px]">WARU, SIDOARJO</span>
               </motion.div>
@@ -287,25 +268,25 @@ export const HeroSection: React.FC = () => {
                 {/* Project Screenshot / Media Thumbnail */}
                 <div className="w-28 sm:w-32 h-14 rounded-xl overflow-hidden bg-zinc-900 border border-white/10 shrink-0 relative">
                   <img 
-                    src="/assets/img/portfolio/img-ppdb.png" 
-                    alt="Brilliant EdTech ML" 
+                    src="/assets/img/portfolio/tempe-bangjae.png" 
+                    alt="Tempe Bang Jae Artisan E-Commerce" 
                     className="w-full h-full object-cover object-top opacity-90 group-hover:scale-105 transition-transform duration-300" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <span className="absolute bottom-1 right-1.5 text-[9px] font-mono text-white/90 bg-black/70 px-1 py-0.5 rounded border border-white/10">
-                    ML-API
+                    LIVE
                   </span>
                 </div>
 
                 <div className="flex flex-col min-w-0">
-                  <span className="text-xs font-semibold text-white truncate">Brilliant EdTech</span>
-                  <span className="text-[10px] font-mono text-white/50 truncate">Live Prediction Model</span>
+                  <span className="text-xs font-semibold text-white truncate">Tempe Bang Jae</span>
+                  <span className="text-[10px] font-mono text-white/50 truncate">Artisan Tempe Waru</span>
                 </div>
               </div>
 
               {/* Bottom Caption */}
               <p className="text-[11px] sm:text-xs text-white/60 leading-relaxed font-normal mt-2.5 max-w-xs sm:max-w-sm">
-                Automated ML classification with high-speed FastAPI inference.
+                Boutique digital storefront and order simulation for Waru, Sidoarjo.
               </p>
             </motion.div>
           </div>
@@ -329,7 +310,7 @@ export const HeroSection: React.FC = () => {
                   Featured Systems
                 </span>
                 <span className="text-[10px] font-mono text-white/40">
-                  PROD • ACTIVE
+                  PRODUCTION ACTIVE
                 </span>
               </div>
 
@@ -369,52 +350,76 @@ export const HeroSection: React.FC = () => {
                       </div>
                     </div>
 
-                    {/* Metadata & Menu Action */}
+                    {/* Metadata & Direct Link Action */}
                     <div className="flex items-center gap-2 shrink-0 ml-2">
-                      <span className="text-[10px] font-mono text-white/40">
-                        {item.year}
-                      </span>
-                      <MoreVertical className="w-3.5 h-3.5 text-white/40 group-hover:text-white transition-colors" />
+                      <a
+                        href="https://tempebangjae.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="px-2.5 py-1 rounded-full bg-white/10 hover:bg-white hover:text-black text-white/80 text-[10px] font-mono inline-flex items-center gap-1 transition-all cursor-pointer shadow-sm active:scale-[0.98]"
+                        title="Open live website"
+                      >
+                        <span>View</span>
+                        <ArrowUpRight className="w-3 h-3" />
+                      </a>
                     </div>
                   </div>
                 ))}
               </div>
             </motion.div>
 
-            {/* Bottom Right Glassmorphism Card: Machine Intelligence */}
+            {/* Bottom Right Glassmorphism Card: Artisan E-Commerce with Direct Link */}
             <motion.div
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.45 }}
-              onClick={scrollToProjects}
-              className="w-full max-w-[340px] rounded-2xl bg-white/[0.06] backdrop-blur-2xl border border-white/10 p-4 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:border-white/20 transition-all flex flex-col gap-2.5 mt-auto cursor-pointer group"
+              className="w-full max-w-[340px] rounded-2xl bg-white/[0.06] backdrop-blur-2xl border border-white/10 p-4 shadow-[0_20px_50px_rgba(0,0,0,0.6)] hover:border-white/20 transition-all flex flex-col gap-2.5 mt-auto"
             >
               <div>
                 <div className="flex items-center justify-between">
-                  <h3 className="text-sm font-semibold text-white tracking-tight group-hover:text-white transition-colors">
-                    Machine Intelligence
+                  <h3 className="text-sm font-semibold text-white tracking-tight">
+                    Artisan E-Commerce
                   </h3>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-white/40 group-hover:text-white transition-colors" />
+                  <a
+                    href="https://tempebangjae.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-1 rounded-md hover:bg-white/10 text-white/50 hover:text-white transition-colors"
+                    title="Open live web"
+                  >
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </a>
                 </div>
                 <p className="text-xs text-white/60 leading-relaxed mt-1">
-                  Predictive pipelines &amp; high-throughput REST APIs.
+                  Interactive storefront &amp; order simulation system.
                 </p>
               </div>
 
-              {/* Preview Visual Banner */}
-              <div className="w-full h-24 sm:h-28 rounded-xl overflow-hidden bg-zinc-900 border border-white/10 relative">
+              {/* Preview Visual Banner with Direct Link */}
+              <a
+                href="https://tempebangjae.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full h-24 sm:h-28 rounded-xl overflow-hidden bg-zinc-900 border border-white/10 relative block group cursor-pointer"
+                title="Visit Tempe Bang Jae live website"
+              >
                 <img 
-                  src="/assets/img/portfolio/img-kamera.png" 
-                  alt="Vision and Telemetry" 
+                  src="/assets/img/portfolio/tempe-bangjae.png" 
+                  alt="Tempe Bang Jae Storefront" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                 <div className="absolute bottom-2 left-2.5 flex items-center gap-1.5">
                   <span className="text-[10px] font-mono text-white/90 font-medium px-2 py-0.5 rounded-full bg-black/70 border border-white/10">
-                    REAL-TIME CV INFERENCE
+                    LIVE PRODUCTION WARU
                   </span>
                 </div>
-              </div>
+                <div className="absolute top-2 right-2 flex items-center gap-1 text-[9px] font-mono text-black bg-white font-bold px-2 py-0.5 rounded-full shadow-md group-hover:bg-zinc-200 transition-colors">
+                  <span>Visit</span>
+                  <ArrowUpRight className="w-2.5 h-2.5 text-black" />
+                </div>
+              </a>
             </motion.div>
 
           </div>
@@ -470,11 +475,11 @@ export const HeroSection: React.FC = () => {
               <div className="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
                 <div className="flex items-center gap-2.5">
                   <div className="w-8 h-8 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white">
-                    <Activity className="w-4 h-4 animate-pulse" />
+                    <Activity className="w-4 h-4 text-white/80" />
                   </div>
                   <div>
-                    <h3 className="text-sm font-semibold text-white">Live ML Inference Telemetry</h3>
-                    <p className="text-[11px] font-mono text-white/50">FastAPI Model Execution Engine</p>
+                    <h3 className="text-sm font-semibold text-white">Tempe Bang Jae Storefront Simulation</h3>
+                    <p className="text-[11px] font-mono text-white/50">Artisan Tempe E-Commerce, Waru, Sidoarjo</p>
                   </div>
                 </div>
                 <button
@@ -492,18 +497,20 @@ export const HeroSection: React.FC = () => {
                       <CheckCircle2 className="w-3.5 h-3.5 text-white/80" />
                       HTTP 200 OK
                     </span>
-                    <span>POST /api/v1/recommend-level</span>
+                    <span>STORE: TEMPE-BANG-JAE</span>
                   </div>
                   <pre className="text-white/80 overflow-x-auto leading-relaxed">
 {`{
-  "student_id": "STD-2025-084",
-  "assessment_scores": [88, 92, 79, 85],
-  "learning_pace": "accelerated",
-  "inference_latency_ms": 14.8,
-  "recommendation": {
-    "level": "Advanced-B2",
-    "confidence": 0.946,
-    "classifier": "RandomForestClassifier(n_estimators=100)"
+  "store": "Tempe Bang Jae - Artisan Tempe Waru",
+  "status": "Online, Production Active",
+  "cart_summary": {
+    "total_items": 3,
+    "selected": ["Tempe Daun Pisang (x2)", "Tempe Daun Jati (x1)"],
+    "total_amount_idr": 26000
+  },
+  "deployment": {
+    "platform": "Vercel Edge Network",
+    "live_url": "https://tempebangjae.vercel.app/"
   }
 }`}
                   </pre>
@@ -512,17 +519,16 @@ export const HeroSection: React.FC = () => {
                 <div className="flex items-center justify-between text-xs text-white/60 pt-2">
                   <span className="flex items-center gap-1.5">
                     <Cpu className="w-3.5 h-3.5 text-white/40" />
-                    Served via FastAPI async worker
+                    Deployed on Vercel
                   </span>
-                  <button
-                    onClick={() => {
-                      setIsPlayingDemo(false);
-                      scrollToProjects();
-                    }}
+                  <a
+                    href="https://tempebangjae.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-white hover:underline flex items-center gap-1 font-medium cursor-pointer"
                   >
-                    View Project Case Study &rarr;
-                  </button>
+                    Open Live Web Application &rarr;
+                  </a>
                 </div>
               </div>
             </motion.div>

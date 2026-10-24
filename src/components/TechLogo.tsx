@@ -94,6 +94,12 @@ export const getTechLogoSrc = (name: string): string | null => {
   if (normalized.includes('css')) {
     return '/assets/img/skill/css.png';
   }
+  if (normalized.includes('javascript') || normalized === 'js') {
+    return '/assets/img/tools/javascript.svg';
+  }
+  if (normalized.includes('vercel')) {
+    return '/assets/img/tools/vercel.svg';
+  }
   return null;
 };
 

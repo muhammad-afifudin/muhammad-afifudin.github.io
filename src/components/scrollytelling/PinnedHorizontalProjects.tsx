@@ -1,13 +1,15 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ExternalLink, Github, Code2, ArrowUpRight, Cpu } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import portfolioData from '../../data/portfolioData.json';
 import { TechLogo } from '../TechLogo';
 
 export const PinnedHorizontalProjects: React.FC = () => {
   const targetRef = useRef<HTMLDivElement>(null);
-  const { featuredProjects } = portfolioData;
+  const { featuredProjects, projects } = portfolioData;
+  const projectCount = featuredProjects.length;
+  const isMultiProject = projectCount > 1;
 
   // Responsive check: Disable horizontal pinning on mobile (< 768px)
   const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -27,8 +29,9 @@ export const PinnedHorizontalProjects: React.FC = () => {
     offset: ['start start', 'end end'],
   });
 
-  // Calculate translation: shift by ~75% across 4 wide cards
-  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-75%']);
+  // Calculate translation: shift across cards only if multiple projects
+  const shiftPct = isMultiProject ? `-${(projectCount - 1) * 35}%` : '0%';
+  const x = useTransform(scrollYProgress, [0, 1], ['0%', shiftPct]);
   const progressScaleX = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
@@ -37,59 +40,57 @@ export const PinnedHorizontalProjects: React.FC = () => {
       ref={targetRef}
       style={{ position: 'relative' }}
       className={`w-full ${
-        isMobile ? 'h-auto py-16' : 'h-[380vh]'
+        !isMultiProject || isMobile ? 'h-auto py-16 md:py-24' : 'h-[320vh]'
       } bg-[#07080a] border-t border-white/[0.08] overflow-hidden`}
     >
       {/* Background Wireframe Arcs */}
       <div className="absolute top-1/4 -right-48 w-[700px] h-[700px] wireframe-circle opacity-10 pointer-events-none" />
       <div className="absolute bottom-10 -left-48 w-[600px] h-[600px] wireframe-circle opacity-10 pointer-events-none" />
 
-      {/* Sticky Viewport Container on Desktop, Normal Flow on Mobile */}
+      {/* Sticky Viewport Container on Desktop for multi-project, Normal Flow otherwise */}
       <div
         style={
-          isMobile
+          !isMultiProject || isMobile
             ? { position: 'relative' }
             : { position: 'sticky', top: 0, height: '100vh' }
         }
         className={`${
-          isMobile
+          !isMultiProject || isMobile
             ? 'w-full'
             : 'overflow-hidden flex flex-col justify-between pt-20 pb-6'
         } max-w-[1400px] mx-auto px-4 md:px-8`}
       >
-        {/* Section Header with Behance Signature Orb (Slice 6 style) */}
-        <div className="w-full flex flex-col md:flex-row md:items-end justify-between mb-4 pb-4 border-b border-white/[0.08] gap-4">
-          <div className="flex items-center gap-4">
-            <div className="section-orb !w-16 !h-16 shrink-0 text-[10px]">
-              <span>PROJECTS</span>
+        {/* Section Header */}
+        <div className="w-full flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b border-white/[0.08] gap-4">
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <span className="font-mono text-xs text-white/50 tracking-wider uppercase">Featured Systems</span>
             </div>
-            <div>
-              <div className="mb-1 font-mono text-xs text-white/50">
-                <span>PROJECTS</span>
-              </div>
-              <h2 className="text-2xl md:text-4xl font-black tracking-tight text-white font-display">
-                Featured Systems.
-              </h2>
-            </div>
+            <h2 className="text-2xl md:text-4xl font-black tracking-tight text-white font-display">
+              Production Architecture.
+            </h2>
           </div>
 
-          <div className="mt-3 md:mt-0 flex flex-wrap items-center gap-3 text-xs font-mono">
+          <div className="flex items-center gap-3 text-xs font-mono">
             <Link
               to="/projects"
-              className="px-4 py-2 rounded-full border border-white/20 bg-white/[0.05] hover:bg-white hover:text-black font-mono text-xs text-white transition-all inline-flex items-center gap-1.5 cursor-pointer"
+              className="px-4 py-2 rounded-full border border-white/20 bg-white/[0.05] hover:bg-white hover:text-black font-mono text-xs text-white transition-all inline-flex items-center gap-1.5 cursor-pointer active:scale-[0.98]"
             >
-              <span>VIEW FULL CATALOG (6+)</span>
+              <span>View Full Catalog ({projects.length})</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10 text-white/70 bg-white/[0.02]">
-              <Cpu className="w-3.5 h-3.5 text-white/80" />
-              <span>4 PRODUCTION SYSTEMS</span>
-            </div>
           </div>
         </div>
 
-        {/* Desktop: Horizontal Motion Track | Mobile: Vertical Grid / Stack */}
-        {isMobile ? (
+        {/* Content Showcase */}
+        {!isMultiProject ? (
+          /* Single Featured System Grand Showcase */
+          <div className="w-full max-w-[1100px] mx-auto my-auto">
+            {featuredProjects.map((project, idx) => (
+              <ProjectCard key={project.id} project={project} index={idx} />
+            ))}
+          </div>
+        ) : isMobile ? (
           /* Mobile Vertical Fallback */
           <div className="flex flex-col gap-8 w-full">
             {featuredProjects.map((project, idx) => (
@@ -115,10 +116,10 @@ export const PinnedHorizontalProjects: React.FC = () => {
           </div>
         )}
 
-        {/* Scrollytelling Progress Bar Indicator at bottom (Desktop only) */}
-        {!isMobile && (
+        {/* Bottom Status Ribbon */}
+        {isMultiProject && !isMobile ? (
           <div className="pt-3 border-t border-[#292d30] flex items-center justify-between text-xs font-mono text-[#6e727a]">
-            <span>SCROLL TO ADVANCE • SYSTEM 01 &rarr; 04</span>
+            <span>SCROLL TO ADVANCE - SYSTEM 01 &rarr; {String(projectCount).padStart(2, '0')}</span>
             <div className="w-56 h-1.5 bg-[#292d30] rounded-full overflow-hidden">
               <motion.div
                 style={{ scaleX: progressScaleX, transformOrigin: 'left' }}
@@ -126,6 +127,13 @@ export const PinnedHorizontalProjects: React.FC = () => {
               />
             </div>
             <span>HORIZONTAL TRACK ACTIVE</span>
+          </div>
+        ) : (
+          <div className="mt-8 pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-white/40">
+            <span>LIVE PRODUCTION SERVICE</span>
+            <span className="font-mono text-xs text-white/70 tracking-wider uppercase">
+              ONLINE &amp; ACTIVE
+            </span>
           </div>
         )}
       </div>
@@ -140,115 +148,104 @@ interface ProjectCardProps {
     title: string;
     category: string;
     badge: string;
-    description: string;
-    metrics: string[];
     tags: string[];
     liveUrl: string;
-    githubUrl: string;
-    codeSnippet: string;
   };
   index: number;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   return (
-    <div className="resend-card p-6 md:p-7 flex flex-col justify-between bg-[#121418] border border-white/10 hover:border-white/25 transition-colors group">
-      {/* Top Bar: Number and Status Badge */}
-      <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
-        <div className="flex items-center gap-3">
-          <span className="font-mono text-sm font-semibold text-white/50">
-            [{project.number}]
-          </span>
-          <span className="font-mono text-xs text-white/80 uppercase tracking-wider">
-            {project.badge}
-          </span>
-        </div>
-
-        <div className="text-xs font-mono text-white/60">
-          <span>PRODUCTION READY</span>
-        </div>
+    <div className="resend-card p-6 md:p-8 bg-[#121418] border border-white/10 hover:border-white/25 transition-all group">
+      {/* Top Bar: Badge and Status */}
+      <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-6">
+        <span className="font-mono text-xs text-white/70 uppercase tracking-wider">
+          {project.badge}
+        </span>
+        <span className="text-xs font-mono text-white/50 uppercase tracking-wider">
+          PRODUCTION READY
+        </span>
       </div>
 
-      {/* Main Grid: Info on left, Code/Terminal Proof on right */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
-        {/* Left Column: Title, Impact Summary, Metrics */}
-        <div className="lg:col-span-7 flex flex-col">
-          <span className="text-[11px] font-mono text-white/50 uppercase tracking-wider mb-0.5">
-            {project.category}
-          </span>
-          <h3 className="text-xl md:text-2xl font-bold text-white tracking-tight mb-2.5 font-display">
-            {project.title}
-          </h3>
-
-          <p className="text-xs md:text-sm text-white/60 leading-relaxed mb-4 font-normal">
-            {project.description}
-          </p>
-
-          {/* System Metrics Telemetry Pills */}
-          <div className="flex flex-wrap gap-2 mb-4">
-            {project.metrics.map((metric, i) => (
-              <span
-                key={i}
-                className="font-mono text-[11px] px-2.5 py-1 rounded-full border border-white/10 text-white/90 bg-white/5"
-              >
-                {metric}
+      {/* Main Grid: Visual banner on left, Tech & Action on right */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        {/* Project Thumbnail Banner with Direct Link to Source Web */}
+        <div className="lg:col-span-7">
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full aspect-[16/10] rounded-2xl overflow-hidden border border-white/10 hover:border-white/30 bg-[#050505] relative group/preview cursor-pointer transition-all shadow-2xl"
+            title={`Visit ${project.title}`}
+          >
+            <img
+              src="/assets/img/portfolio/tempe-bangjae.png"
+              alt={project.title}
+              className="w-full h-full object-cover group-hover/preview:scale-105 transition-transform duration-500"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            
+            <div className="absolute bottom-3 left-3 flex items-center gap-2">
+              <span className="text-[11px] font-mono text-white/90 bg-black/80 px-3 py-1 rounded-full border border-white/15">
+                {project.category}
               </span>
-            ))}
-          </div>
+            </div>
 
-          {/* Tech Stack Badges */}
-          <div className="flex flex-wrap gap-1.5 mb-4">
-            {project.tags.map((t) => (
-              <span key={t} className="resend-badge text-[11px] py-0.5 px-2 inline-flex items-center gap-1.5">
-                <TechLogo name={t} className="w-3 h-3" />
-                <span>{t}</span>
-              </span>
-            ))}
-          </div>
+            <span className="absolute top-3 right-3 text-xs font-mono text-black bg-white font-bold px-3 py-1.5 rounded-full shadow-lg inline-flex items-center gap-1.5 group-hover/preview:bg-zinc-200 transition-colors">
+              <span>Visit Site</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-black" />
+            </span>
+          </a>
+        </div>
 
-          {/* Action CTAs: Ghost Buttons */}
-          <div className="flex items-center gap-3 mt-auto pt-1">
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="resend-btn-ghost !text-xs !py-1.5 !px-3 group"
-            >
-              <Github className="w-3.5 h-3.5 text-[#f0f0f0]" />
-              <span>Source Code</span>
-              <ArrowUpRight className="w-3 h-3 text-[#a1a4a5] group-hover:text-white transition-colors" />
-            </a>
-
-            {project.liveUrl && (
+        {/* Project Details: Title, Technologies & Direct Action */}
+        <div className="lg:col-span-5 flex flex-col justify-between h-full">
+          <div>
+            <span className="text-xs font-mono text-white/50 uppercase tracking-wider block mb-2">
+              {project.category}
+            </span>
+            <h3 className="text-2xl md:text-3xl font-black text-white tracking-tight mb-6 font-display">
               <a
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="resend-btn-ghost !text-xs !py-1.5 !px-3 group"
+                className="hover:text-white/80 transition-colors inline-flex items-center gap-2 group/title"
               >
-                <ExternalLink className="w-3.5 h-3.5 text-[#0A84FF]" />
-                <span>Live Service</span>
+                <span>{project.title}</span>
+                <ArrowUpRight className="w-5 h-5 text-white/40 group-hover/title:text-white transition-colors" />
               </a>
-            )}
-          </div>
-        </div>
+            </h3>
 
-        {/* Right Column: Terminal Window / Code Snippet Proof */}
-        <div className="lg:col-span-5 flex flex-col w-full">
-          <div className="code-window overflow-hidden border border-[#292d30] rounded-[10px] bg-[#050505]">
-            {/* Window Header */}
-            <div className="flex items-center justify-between px-3 py-1.5 border-b border-[#292d30] bg-[#080808]">
-              <span className="text-[10px] font-mono text-white/40 tracking-wider">SOURCE_LOG</span>
-              <div className="flex items-center gap-1.5 text-[10px] font-mono text-[#6e727a]">
-                <Code2 className="w-3 h-3 text-[#0A84FF]" />
-                <span>inference-telemetry.log</span>
+            {/* Technologies Showcase */}
+            <div className="mb-8 pt-4 border-t border-white/10">
+              <span className="text-xs font-mono uppercase tracking-wider text-white/40 block mb-3">
+                Technologies
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {project.tags.map((t) => (
+                  <span
+                    key={t}
+                    className="font-mono text-xs px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-white inline-flex items-center gap-2 hover:bg-white/10 transition-colors"
+                  >
+                    <TechLogo name={t} className="w-3.5 h-3.5" />
+                    <span>{t}</span>
+                  </span>
+                ))}
               </div>
             </div>
+          </div>
 
-            {/* Code Content */}
-            <pre className="p-3 text-[11px] font-mono text-[#abafb4] overflow-x-auto leading-relaxed whitespace-pre-wrap selection:bg-[#0A84FF]/20">
-              <code>{project.codeSnippet}</code>
-            </pre>
+          {/* Action CTA: Direct View to Source Web */}
+          <div className="pt-2">
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-3.5 rounded-full bg-white text-black font-mono text-xs font-bold inline-flex items-center justify-center gap-2 hover:bg-zinc-200 active:scale-[0.98] transition-all cursor-pointer shadow-lg"
+            >
+              <span>Visit Website</span>
+              <ArrowUpRight className="w-4 h-4 text-black" />
+            </a>
           </div>
         </div>
       </div>

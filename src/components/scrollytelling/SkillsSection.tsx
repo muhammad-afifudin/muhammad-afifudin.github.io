@@ -63,7 +63,7 @@ export const SkillsSection: React.FC = () => {
     { name: 'REST APIs', orbit: 'outer', angle: 90, color: '#a855f7', category: 'Architecture' },
     { name: 'Postman', orbit: 'outer', angle: 160, color: '#f97316', category: 'Testing' },
     { name: 'Tailwind CSS', orbit: 'outer', angle: 240, color: '#06b6d4', category: 'Styling' },
-    { name: 'Docker / Linux', orbit: 'outer', angle: 320, color: '#0ea5e9', category: 'DevOps' }
+    { name: 'Docker & Linux', orbit: 'outer', angle: 320, color: '#0ea5e9', category: 'DevOps' }
   ];
 
   const devTools = [
@@ -74,7 +74,7 @@ export const SkillsSection: React.FC = () => {
     { name: 'Google Colab', tag: 'Jupyter Notebooks' },
     { name: 'MySQL Workbench', tag: 'Database GUI' },
     { name: 'TablePlus', tag: 'Data Browser' },
-    { name: 'Ubuntu / WSL', tag: 'Linux Environment' }
+    { name: 'Ubuntu & WSL', tag: 'Linux Environment' }
   ];
 
   return (
@@ -223,7 +223,7 @@ export const SkillsSection: React.FC = () => {
             </div>
 
             <div className="mt-4 font-mono text-xs text-white/40">
-              <span>INTERACTIVE ORBITAL TECH RADAR • ROTATIONAL SPECIALIZATION</span>
+              <span>INTERACTIVE ORBITAL TECH RADAR - ROTATIONAL SPECIALIZATION</span>
             </div>
           </motion.div>
 

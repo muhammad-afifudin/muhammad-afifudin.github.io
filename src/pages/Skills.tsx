@@ -24,7 +24,7 @@ const Skills: React.FC = () => {
     { name: 'Google Colab', tag: 'Jupyter Notebooks' },
     { name: 'MySQL Workbench', tag: 'Database GUI' },
     { name: 'TablePlus', tag: 'Data Browser' },
-    { name: 'Ubuntu / WSL', tag: 'Linux Environment' }
+    { name: 'Ubuntu & WSL', tag: 'Linux Environment' }
   ];
 
   return (
@@ -110,7 +110,7 @@ const Skills: React.FC = () => {
                         </div>
                         <div className="min-w-0">
                           <span className="text-xs font-bold text-white block truncate">{skill.name}</span>
-                          <span className="text-[10px] font-mono text-white/50 block">ACTIVE • VERIFIED</span>
+                          <span className="text-[10px] font-mono text-white/50 block">ACTIVE VERIFIED</span>
                         </div>
                       </div>
                     ))}

@@ -121,7 +121,7 @@ export const ServicesSection: React.FC = () => {
                 <span className="font-mono text-xs uppercase tracking-wider text-white/80 font-semibold">
                   ML SERVICE HIGHLIGHT
                 </span>
-                <span className="text-xs font-mono text-white/40">FASTAPI • INFERENCE</span>
+                <span className="text-xs font-mono text-white/40">FASTAPI &amp; INFERENCE</span>
               </div>
               <h4 className="text-xl sm:text-2xl font-bold text-white mb-2 font-display">
                 94.6% Accuracy ML Engine
@@ -148,7 +148,7 @@ export const ServicesSection: React.FC = () => {
                 <span className="font-mono text-xs uppercase tracking-wider text-white/80 font-semibold">
                   FULL-STACK HIGHLIGHT
                 </span>
-                <span className="text-xs font-mono text-white/40">LARAVEL • BLADE</span>
+                <span className="text-xs font-mono text-white/40">LARAVEL &amp; BLADE</span>
               </div>
               <h4 className="text-xl sm:text-2xl font-bold text-white mb-2 font-display">
                 Interactive Course Portal
